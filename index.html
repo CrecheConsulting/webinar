@@ -3,595 +3,1740 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Webinar: De España a Irlanda — SolveED × NBEduca</title>
+<title>¿Quieres trabajar en un creche irlandés con las cosas claras? — SolveED × NBEduca</title>
+<meta name="description" content="Webinar en directo 29 abril · 90 minutos con Roberto (SolveED) y Nacho (NBEduca) sobre empleo, certificaciones y vida real en Irlanda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Baloo+2:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-/* ─── RESET & BASE ─────────────────────────────── */
+/* ═══════════════════════════════════════════════════
+   RESET
+   ═══════════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Inter', sans-serif;
-  background: #FFFFFF;
-  color: #111827;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #FAF7F3;
+  color: #0A0E1A;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+img, svg { display: block; max-width: 100%; }
 
-/* ─── TOKENS ───────────────────────────────────── */
+/* ═══════════════════════════════════════════════════
+   TOKENS — Hormozi-style contrast + SolveED warmth
+   ═══════════════════════════════════════════════════ */
 :root {
-  --blue:        #2563EB;
-  --blue-mid:    #3B82F6;
-  --blue-light:  #EFF6FF;
-  --blue-dark:   #1D4ED8;
-  --indigo:      #4F46E5;
-  --amber:       #F59E0B;
-  --amber-light: #FFFBEB;
-  --amber-dark:  #D97706;
-  --green:       #10B981;
-  --green-light: #ECFDF5;
-  --red:         #EF4444;
-  --gray-50:     #F9FAFB;
-  --gray-100:    #F3F4F6;
-  --gray-200:    #E5E7EB;
-  --gray-400:    #9CA3AF;
-  --gray-500:    #6B7280;
-  --gray-700:    #374151;
-  --gray-900:    #111827;
-  --shadow-sm:   0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
-  --shadow-md:   0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
-  --shadow-lg:   0 10px 32px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.04);
-  --shadow-blue: 0 8px 24px rgba(37,99,235,.25);
-  --r:           14px;
-  --r-sm:        10px;
-  --r-lg:        20px;
+  /* Peach — warmth, optimism, CTA principal */
+  --peach:         #FFBE98;
+  --peach-mid:     #F58C5C;
+  --peach-deep:    #E5703C;
+  --peach-darker:  #C4571F;
+  --peach-light:   #FFF1E6;
+  --peach-pale:    #FFF9F3;
+
+  /* Sky — trust, authority, secondary CTA */
+  --sky:           #87C5E8;
+  --sky-mid:       #3B9FD8;
+  --sky-deep:      #1E6FA8;
+  --sky-dark:      #0F4E7D;
+  --sky-light:     #E8F2F9;
+
+  /* Ink — authority, Hormozi-style dark sections */
+  --ink:           #0A0E1A;
+  --ink-2:         #14192A;
+  --ink-3:         #1F2640;
+
+  /* Neutrals */
+  --cream:         #FAF7F3;
+  --cream-2:       #F3EEE6;
+  --cream-3:       #E8E2D6;
+  --stone:         #6B7280;
+  --stone-2:       #4B5563;
+  --stone-3:       #374151;
+  --white:         #FFFFFF;
+  --green:         #059669;
+  --green-light:   #D1FAE5;
+  --red:           #DC2626;
+
+  /* Shadows */
+  --sh-sm:   0 1px 3px rgba(10,14,26,.06), 0 1px 2px rgba(10,14,26,.04);
+  --sh-md:   0 4px 20px rgba(10,14,26,.07), 0 2px 6px rgba(10,14,26,.04);
+  --sh-lg:   0 16px 48px rgba(10,14,26,.12), 0 4px 12px rgba(10,14,26,.06);
+  --sh-peach:0 12px 36px rgba(229,112,60,.35), 0 4px 10px rgba(229,112,60,.2);
+  --sh-peach-hv:0 18px 48px rgba(229,112,60,.45), 0 6px 14px rgba(229,112,60,.28);
+  --sh-sky:  0 12px 36px rgba(30,111,168,.3);
+
+  /* Radii */
+  --r-sm: 8px;
+  --r:    12px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 999px;
 }
 
-/* ─── UTILITIES ────────────────────────────────── */
-.container { max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 60px); }
-.section { padding: 88px 0; }
-.section-sm { padding: 56px 0; }
-.section-label {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 12px; font-weight: 700; color: var(--blue);
-  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+/* ═══════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════ */
+.container { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+.container-tight { max-width: 960px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+.section { padding: clamp(72px, 10vw, 120px) 0; }
+.section-sm { padding: clamp(56px, 7vw, 80px) 0; }
+
+/* ═══════════════════════════════════════════════════
+   TYPOGRAPHY — Hormozi scale (oversized) with warmth
+   ═══════════════════════════════════════════════════ */
+.display-xl {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 8vw, 108px);
+  line-height: .95;
+  letter-spacing: -2.5px;
+  color: var(--ink);
 }
-.section-label::before {
+.display-lg {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 5.5vw, 72px);
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+}
+.display-md {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
+.display-sm {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -.4px;
+  color: var(--ink);
+}
+.lead {
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.55;
+  color: var(--stone-2);
+  font-weight: 400;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--peach-deep);
+}
+.eyebrow::before {
   content: '';
-  width: 20px; height: 2px;
-  background: var(--blue); border-radius: 1px;
+  width: 24px; height: 2px;
+  background: var(--peach-deep);
 }
-.section-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(26px, 3.5vw, 40px);
-  font-weight: 800; color: var(--gray-900);
-  line-height: 1.15; letter-spacing: -0.5px;
-  margin-bottom: 16px;
-}
-.section-sub {
-  font-size: 17px; color: var(--gray-500);
-  max-width: 540px; line-height: 1.7;
-  margin-bottom: 52px;
-}
-.divider { height: 1px; background: var(--gray-200); }
+.eyebrow-sky { color: var(--sky-deep); }
+.eyebrow-sky::before { background: var(--sky-deep); }
+.eyebrow-white { color: var(--peach); }
+.eyebrow-white::before { background: var(--peach); }
 
-/* ─── ICON SYSTEM (SVG inline, no emojis) ──────── */
-.icon-box {
-  width: 48px; height: 48px; border-radius: var(--r-sm);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+.hi-peach { color: var(--peach-deep); }
+.hi-sky   { color: var(--sky-deep); }
+.hi-underline {
+  position: relative; display: inline-block;
 }
-.icon-box svg { width: 22px; height: 22px; }
-.ib-blue   { background: var(--blue-light);  color: var(--blue); }
-.ib-amber  { background: var(--amber-light); color: var(--amber-dark); }
-.ib-green  { background: var(--green-light); color: var(--green); }
-.ib-indigo { background: #EEF2FF; color: var(--indigo); }
-.ib-red    { background: #FEF2F2; color: var(--red); }
-.ib-teal   { background: #F0FDFA; color: #0D9488; }
+.hi-underline::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 10px;
+  background: var(--peach);
+  border-radius: 8px;
+  opacity: .6;
+  z-index: -1;
+}
 
-/* ─── BUTTONS ──────────────────────────────────── */
+/* ═══════════════════════════════════════════════════
+   BUTTONS — Hormozi style: massive, unmissable
+   ═══════════════════════════════════════════════════ */
 .btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700; text-decoration: none;
-  border-radius: var(--r); transition: all .18s;
-  cursor: pointer; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800; font-size: 17px;
+  text-decoration: none; border: none; cursor: pointer;
+  border-radius: var(--r-pill);
+  transition: transform .18s cubic-bezier(.34,1.46,.64,1), box-shadow .2s, background .18s;
+  white-space: nowrap;
+  letter-spacing: .2px;
 }
+.btn svg { transition: transform .18s; }
+.btn:active { transform: translateY(1px) scale(.99); }
+
 .btn-primary {
-  background: var(--blue); color: #fff;
-  padding: 14px 28px; font-size: 16px;
-  box-shadow: var(--shadow-blue);
+  background: var(--peach-mid);
+  color: var(--white);
+  padding: 20px 40px;
+  box-shadow: var(--sh-peach);
+  font-size: 18px;
 }
-.btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 12px 32px rgba(37,99,235,.35); }
-.btn-primary svg { transition: transform .18s; }
-.btn-primary:hover svg { transform: translateX(3px); }
-
-.btn-ghost {
-  background: transparent; color: var(--blue);
-  border: 2px solid var(--blue);
-  padding: 12px 24px; font-size: 15px;
+.btn-primary:hover {
+  background: var(--peach-deep);
+  transform: translateY(-3px);
+  box-shadow: var(--sh-peach-hv);
 }
-.btn-ghost:hover { background: var(--blue-light); }
+.btn-primary:hover svg { transform: translateX(5px); }
 
-.btn-amber {
-  background: var(--amber); color: #fff;
-  padding: 14px 28px; font-size: 16px;
-  box-shadow: 0 8px 24px rgba(245,158,11,.3);
+.btn-mega {
+  background: var(--peach-mid);
+  color: var(--white);
+  padding: 24px 52px;
+  font-size: 20px;
+  box-shadow: var(--sh-peach);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.btn-amber:hover { background: var(--amber-dark); transform: translateY(-1px); }
+.btn-mega:hover {
+  background: var(--peach-deep);
+  transform: translateY(-3px);
+  box-shadow: var(--sh-peach-hv);
+}
+.btn-mega:hover svg { transform: translateX(6px); }
 
-/* ─── NAV ──────────────────────────────────────── */
+.btn-ghost-dark {
+  background: transparent;
+  color: var(--ink);
+  padding: 18px 30px;
+  border: 2px solid var(--ink);
+  font-size: 16px;
+}
+.btn-ghost-dark:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.btn-ghost-light {
+  background: transparent;
+  color: var(--white);
+  padding: 18px 30px;
+  border: 2px solid rgba(255,255,255,.3);
+  font-size: 16px;
+}
+.btn-ghost-light:hover {
+  background: rgba(255,255,255,.1);
+  border-color: var(--white);
+}
+
+.btn-sm {
+  padding: 12px 22px;
+  font-size: 14px;
+}
+
+/* ═══════════════════════════════════════════════════
+   LIVE BADGE
+   ═══════════════════════════════════════════════════ */
+.live-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: var(--ink);
+}
+.live-dot {
+  width: 8px; height: 8px;
+  background: #EF4444; border-radius: 50%;
+  animation: livePulse 1.6s infinite;
+  box-shadow: 0 0 0 0 rgba(239,68,68,.6);
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(239,68,68,.6); }
+  50%      { opacity: .6; box-shadow: 0 0 0 6px rgba(239,68,68,0); }
+}
+
+/* ═══════════════════════════════════════════════════
+   NAV — ultra-clean, Hormozi minimal
+   ═══════════════════════════════════════════════════ */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,.92); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--gray-200);
-  height: 64px;
+  background: rgba(250,247,243,.88);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s, background .2s;
+}
+.nav.scrolled {
+  background: rgba(250,247,243,.94);
+  border-bottom-color: var(--cream-3);
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  height: 100%;
+  height: 70px;
 }
-.nav-logo {
-  display: flex; align-items: center; gap: 10px;
+.brand {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
 }
-.nav-logo-mark {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: linear-gradient(135deg, var(--blue), var(--indigo));
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--peach-mid) 0%, var(--peach-deep) 100%);
   display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(229,112,60,.3);
 }
-.nav-logo-mark svg { width: 16px; height: 16px; color: #fff; }
-.nav-logo span { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--gray-900); }
-.nav-logo span em { font-style: normal; color: var(--blue); }
-
-.nav-links { display: flex; align-items: center; gap: 28px; }
-.nav-links a { font-size: 14px; font-weight: 500; color: var(--gray-500); text-decoration: none; transition: color .15s; }
-.nav-links a:hover { color: var(--gray-900); }
-
-.live-chip {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: #FEF2F2; border: 1px solid #FECACA;
-  color: var(--red); font-size: 11px; font-weight: 700;
-  padding: 4px 10px; border-radius: 20px;
+.brand-mark svg { width: 20px; height: 20px; color: var(--white); }
+.brand-name {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 16px; font-weight: 800; color: var(--ink);
+  letter-spacing: -.3px;
 }
-.live-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: blink 1.4s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.brand-name span { color: var(--peach-deep); font-weight: 700; }
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+}
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--stone-2);
+  text-decoration: none; transition: color .15s;
+}
+.nav-links a:hover { color: var(--ink); }
 
-/* ─── HERO ─────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════
+   HERO — Hormozi signature: question + mega CTA
+   ═══════════════════════════════════════════════════ */
 .hero {
-  padding-top: 100px;
-  background: linear-gradient(160deg, #FFFFFF 0%, var(--blue-light) 60%, #EEF2FF 100%);
-  position: relative; overflow: hidden;
+  position: relative;
+  padding: 140px 0 80px;
+  background: var(--cream);
+  overflow: hidden;
 }
 .hero::before {
   content: '';
-  position: absolute; top: -200px; right: -200px;
-  width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(79,70,229,.06) 0%, transparent 65%);
-  pointer-events: none;
+  position: absolute;
+  top: -30%; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(255,190,152,.28) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
 }
 .hero-inner {
+  position: relative; z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 480px;
-  gap: 60px; align-items: center;
-  padding: 72px 0 80px;
+  grid-template-columns: minmax(0, 220px) 1fr minmax(0, 220px);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
 }
-
-/* Hero left */
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: #EFF6FF; border: 1px solid #BFDBFE;
-  color: var(--blue-dark); font-size: 12px; font-weight: 700;
-  padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
-  text-transform: uppercase; letter-spacing: 0.5px;
+.hero-side {
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
 }
-.hero-eyebrow .dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: blink 2s infinite; }
-
-.hero h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(36px, 4.5vw, 58px);
-  font-weight: 800; line-height: 1.08;
-  letter-spacing: -1.5px; color: var(--gray-900);
-  margin-bottom: 20px;
-}
-.hero h1 .accent {
-  background: linear-gradient(135deg, var(--blue) 0%, var(--indigo) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero h1 .underline {
-  position: relative;
-}
-.hero h1 .underline::after {
-  content: '';
-  position: absolute; bottom: 2px; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--amber), var(--red));
-  border-radius: 2px; opacity: .7;
-}
-
-.hero-desc { font-size: 18px; color: var(--gray-500); line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
-
-.hero-meta-row {
-  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px;
-}
-.meta-chip {
-  display: flex; align-items: center; gap: 8px;
-  background: #fff; border: 1px solid var(--gray-200);
-  border-radius: var(--r-sm); padding: 9px 16px;
-  box-shadow: var(--shadow-sm);
-}
-.meta-chip svg { width: 16px; height: 16px; color: var(--blue); flex-shrink: 0; }
-.meta-chip .mc-label { font-size: 10px; color: var(--gray-400); text-transform: uppercase; letter-spacing: .8px; display: block; }
-.meta-chip .mc-value { font-size: 13px; font-weight: 600; color: var(--gray-900); }
-
-.hero-cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-.hero-price { }
-.hero-price .hp-from { font-size: 11px; color: var(--gray-400); }
-.hero-price .hp-amount { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; color: var(--amber-dark); line-height: 1; }
-.hero-price .hp-note { font-size: 11px; color: var(--gray-400); }
-
-/* Hero right: speaker cards */
-.hero-speakers { display: flex; flex-direction: column; gap: 16px; }
-
-.speaker-card {
-  background: #fff;
-  border: 1px solid var(--gray-200);
+.hero-portrait {
+  width: 100%; aspect-ratio: 3/4;
   border-radius: var(--r-lg);
-  padding: 22px 22px;
-  display: flex; align-items: center; gap: 16px;
-  box-shadow: var(--shadow-md);
+  display: flex; align-items: flex-end; justify-content: center;
   position: relative;
-  transition: transform .2s, box-shadow .2s;
+  overflow: hidden;
+  box-shadow: var(--sh-lg);
+  max-width: 220px;
 }
-.speaker-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-.speaker-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  border-radius: var(--r-lg) var(--r-lg) 0 0;
+.hero-portrait.left {
+  background: linear-gradient(180deg, var(--peach) 0%, var(--peach-mid) 60%, var(--peach-deep) 100%);
 }
-.sc-blue::before  { background: linear-gradient(90deg, var(--blue), var(--indigo)); }
-.sc-amber::before { background: linear-gradient(90deg, var(--amber), var(--red)); }
-
-.speaker-ava {
-  width: 64px; height: 64px; border-radius: 50%;
+.hero-portrait.right {
+  background: linear-gradient(180deg, var(--sky) 0%, var(--sky-mid) 60%, var(--sky-deep) 100%);
+}
+.hero-portrait-initial {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(120px, 16vw, 220px);
+  color: rgba(255,255,255,.95);
+  line-height: 1;
+  position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; font-size: 24px;
-  border: 2px solid var(--gray-200);
-  overflow: hidden; background: var(--gray-100);
 }
-.speaker-ava.ava-blue  { background: var(--blue-light); border-color: #BFDBFE; }
-.speaker-ava.ava-amber { background: var(--amber-light); border-color: #FDE68A; }
-.speaker-ava svg { width: 28px; height: 28px; }
-
-.speaker-body {}
-.speaker-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; }
-.speaker-org  { font-size: 13px; color: var(--gray-500); margin-bottom: 8px; }
-.tag {
-  display: inline-block; font-size: 11px; font-weight: 600;
-  padding: 3px 10px; border-radius: 6px;
+.hero-portrait-shine {
+  position: absolute; top: 0; left: 0; right: 0; height: 60%;
+  background: linear-gradient(180deg, rgba(255,255,255,.18) 0%, transparent 100%);
 }
-.tag-blue   { background: var(--blue-light); color: var(--blue-dark); }
-.tag-amber  { background: var(--amber-light); color: var(--amber-dark); }
-
-.stats-strip {
-  background: #fff; border: 1px solid var(--gray-200);
-  border-radius: var(--r-lg); padding: 20px 24px;
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 12px; box-shadow: var(--shadow-sm);
-}
-.stat-item { text-align: center; }
-.stat-item .sn { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 3px; }
-.stat-item .sl { font-size: 11px; color: var(--gray-400); line-height: 1.3; }
-
-/* ─── PROOF BAR ────────────────────────────────── */
-.proof-bar {
-  background: var(--blue); padding: 16px 0;
-}
-.proof-inner {
-  display: flex; align-items: center; justify-content: center;
-  gap: 40px; flex-wrap: wrap;
-}
-.proof-item {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 13px; font-weight: 500; color: rgba(255,255,255,.85);
-}
-.proof-item svg { width: 16px; height: 16px; color: var(--amber); flex-shrink: 0; }
-.proof-item strong { color: #fff; }
-.proof-sep { width: 1px; height: 20px; background: rgba(255,255,255,.2); }
-
-/* ─── LEARN ─────────────────────────────────────── */
-.learn-bg { background: var(--gray-50); }
-.learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
-
-.learn-card {
-  background: #fff; border: 1px solid var(--gray-200);
-  border-radius: var(--r-lg); padding: 26px;
-  display: flex; gap: 18px; align-items: flex-start;
-  box-shadow: var(--shadow-sm);
-  transition: transform .2s, box-shadow .2s, border-color .2s;
-}
-.learn-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: #BFDBFE; }
-.learn-card-body h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
-.learn-card-body p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
-
-/* ─── AGENDA ─────────────────────────────────────── */
-.agenda-bg { background: #fff; }
-.agenda-list { border: 1px solid var(--gray-200); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
-
-.agenda-row {
-  display: grid; grid-template-columns: 120px 1fr 130px;
-  align-items: stretch; border-bottom: 1px solid var(--gray-200);
-}
-.agenda-row:last-child { border-bottom: none; }
-.agenda-row:hover { background: var(--gray-50); }
-
-.ag-time {
-  padding: 18px 16px; background: var(--gray-50);
-  border-right: 1px solid var(--gray-200);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 13px; font-weight: 700; color: var(--blue);
+.hero-portrait-badge {
+  position: absolute; bottom: 14px; left: 14px; right: 14px;
+  padding: 10px 14px;
+  background: rgba(10,14,26,.9);
+  backdrop-filter: blur(10px);
+  border-radius: var(--r);
+  color: var(--white);
   text-align: center;
 }
-.ag-content {
-  padding: 18px 24px;
+.hp-name {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 15px; font-weight: 800; line-height: 1;
+  margin-bottom: 3px;
 }
-.ag-content strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
-.ag-content span { font-size: 13px; color: var(--gray-500); line-height: 1.5; display: block; }
-.ag-tip { font-size: 12px; color: var(--blue); margin-top: 8px; font-style: italic; }
-.ag-who {
-  padding: 18px 16px; border-left: 1px solid var(--gray-200);
+.hp-role {
+  font-size: 11px; color: rgba(255,255,255,.7);
+  letter-spacing: .4px;
+}
+.hero-side-caption {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: var(--stone-2);
+  text-align: center;
+  padding: 6px 14px;
+  background: var(--white);
+  border-radius: var(--r-pill);
+  border: 1px solid var(--cream-3);
+  box-shadow: var(--sh-sm);
+}
+.hero-center {
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 28px;
+}
+.hero-chip-row {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 14px;
+  background: var(--white);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-pill);
+  font-size: 12px; font-weight: 600;
+  color: var(--stone-2);
+  box-shadow: var(--sh-sm);
+}
+.hero-chip svg { width: 13px; height: 13px; color: var(--peach-deep); }
+.hero-h1 {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: clamp(42px, 6.4vw, 92px);
+  line-height: .96;
+  letter-spacing: -2px;
+  color: var(--ink);
+  max-width: 14ch;
+  text-wrap: balance;
+}
+.hero-h1 strong {
+  color: var(--peach-deep);
+  font-weight: 800;
+}
+.hero-sub {
+  font-size: clamp(17px, 1.7vw, 21px);
+  color: var(--stone-2);
+  max-width: 620px;
+  line-height: 1.55;
+}
+.hero-cta-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  padding-top: 4px;
+}
+.hero-cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.hero-cta-note {
+  font-size: 13px; color: var(--stone);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.hero-cta-note svg { width: 13px; height: 13px; color: var(--green); }
+
+/* ═══════════════════════════════════════════════════
+   PROOF STRIP — dark Hormozi-style stat bar
+   ═══════════════════════════════════════════════════ */
+.proof-strip {
+  background: var(--ink);
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.proof-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+.proof-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 0 8px;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+.proof-item:last-child { border-right: none; }
+.proof-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(255,190,152,.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.proof-icon svg { width: 20px; height: 20px; color: var(--peach); }
+.proof-number {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 22px; font-weight: 800; color: var(--white);
+  line-height: 1;
+}
+.proof-label {
+  font-size: 12px; color: rgba(255,255,255,.55);
+  line-height: 1.4; margin-top: 3px;
+}
+
+/* ═══════════════════════════════════════════════════
+   PAIN POINTS — "si te identificas con esto..."
+   ═══════════════════════════════════════════════════ */
+.pain {
+  background: var(--cream);
+  position: relative;
+}
+.pain-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pain-card {
+  background: var(--white);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-lg);
+  padding: 36px 30px;
+  position: relative;
+  transition: transform .22s, box-shadow .22s;
+}
+.pain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-lg);
+}
+.pain-quote {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 64px;
+  color: var(--peach);
+  line-height: 1;
+  margin-bottom: 8px;
+  opacity: .85;
+}
+.pain-text {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 19px; font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.pain-sub {
+  font-size: 14px; color: var(--stone-2);
+  line-height: 1.55;
+}
+.pain-footer {
+  text-align: center; margin-top: 52px;
+}
+.pain-footer-text {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(22px, 2.6vw, 30px); font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════
+   OFFER — what you get in 90 min
+   ═══════════════════════════════════════════════════ */
+.offer {
+  background: var(--white);
+  position: relative;
+}
+.offer-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+.offer-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.offer-block {
+  background: var(--cream);
+  border-radius: var(--r-xl);
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--cream-3);
+  transition: transform .22s, box-shadow .22s;
+}
+.offer-block:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-lg);
+}
+.offer-block.ob-peach {
+  background: linear-gradient(160deg, var(--peach-light) 0%, var(--cream) 70%);
+  border-color: #F5DBC6;
+}
+.offer-block.ob-sky {
+  background: linear-gradient(160deg, var(--sky-light) 0%, var(--cream) 70%);
+  border-color: #D5E6F2;
+}
+.offer-block-num {
+  position: absolute; top: 32px; right: 32px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 96px;
+  color: rgba(10,14,26,.05);
+  line-height: 1;
+}
+.offer-block-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.ob-peach .offer-block-eyebrow { color: var(--peach-deep); }
+.ob-sky .offer-block-eyebrow { color: var(--sky-deep); }
+.offer-block-title {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.05;
+  letter-spacing: -.5px;
+  margin-bottom: 14px;
+}
+.offer-block-lead {
+  font-size: 15px; color: var(--stone-2); line-height: 1.6;
+  margin-bottom: 24px;
+}
+.offer-checklist {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.offer-checklist li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14.5px; font-weight: 500; color: var(--stone-3);
+  line-height: 1.45;
+}
+.ob-peach .offer-checklist li::before {
+  content: ''; flex-shrink: 0; margin-top: 3px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--peach-mid) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/12px no-repeat;
+}
+.ob-sky .offer-checklist li::before {
+  content: ''; flex-shrink: 0; margin-top: 3px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--sky-deep) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/12px no-repeat;
+}
+.offer-value-strip {
+  display: flex; align-items: center; justify-content: center;
+  gap: 18px; flex-wrap: wrap;
+  margin-top: 56px;
+  padding: 28px 36px;
+  background: var(--ink);
+  border-radius: var(--r-lg);
+  color: var(--white);
+}
+.ovs-text {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+.ovs-text strong { color: var(--peach); }
+
+/* ═══════════════════════════════════════════════════
+   SPEAKERS — authority + bio
+   ═══════════════════════════════════════════════════ */
+.speakers {
+  background: var(--cream);
+}
+.speakers-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.speakers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.speaker-card {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  padding: 40px 36px;
+  display: flex; flex-direction: column; gap: 18px;
+  border: 1px solid var(--cream-3);
+  transition: transform .22s, box-shadow .22s;
+}
+.speaker-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-lg);
+}
+.sc-top {
+  display: flex; align-items: center; gap: 20px;
+}
+.sc-avatar {
+  width: 86px; height: 86px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 42px;
+  color: var(--white);
+  box-shadow: var(--sh-md);
+}
+.sc-avatar.peach { background: linear-gradient(135deg, var(--peach-mid) 0%, var(--peach-deep) 100%); }
+.sc-avatar.sky   { background: linear-gradient(135deg, var(--sky-mid) 0%, var(--sky-deep) 100%); }
+.sc-meta {
+  flex: 1; min-width: 0;
+}
+.sc-name {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 26px; font-weight: 800; color: var(--ink);
+  line-height: 1; margin-bottom: 5px;
+}
+.sc-role {
+  font-size: 14px; color: var(--stone-2);
+  font-weight: 500;
+}
+.sc-tag {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 10px; border-radius: var(--r-pill);
+  letter-spacing: .4px; text-transform: uppercase;
+}
+.sc-tag.peach { background: var(--peach-light); color: var(--peach-darker); }
+.sc-tag.sky   { background: var(--sky-light); color: var(--sky-dark); }
+.sc-bio {
+  font-size: 15px; color: var(--stone-2); line-height: 1.6;
+}
+.sc-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cream-3);
+}
+.sc-stat {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.sc-stat-num {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 28px; font-weight: 800; line-height: 1;
+  color: var(--ink);
+}
+.peach-num { color: var(--peach-deep); }
+.sky-num   { color: var(--sky-deep); }
+.sc-stat-label {
+  font-size: 12px; color: var(--stone);
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════
+   AGENDA — clean timeline
+   ═══════════════════════════════════════════════════ */
+.agenda {
+  background: var(--white);
+}
+.agenda-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.agenda-timeline {
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex; flex-direction: column; gap: 0;
+  position: relative;
+}
+.agenda-timeline::before {
+  content: '';
+  position: absolute;
+  left: 102px; top: 28px; bottom: 28px;
+  width: 2px;
+  background: var(--cream-3);
+}
+.agenda-row {
+  display: grid;
+  grid-template-columns: 90px 24px 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  align-items: flex-start;
+}
+.agenda-time {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 17px; font-weight: 800;
+  color: var(--ink);
+  line-height: 1; padding-top: 8px;
+  text-align: right;
+}
+.agenda-dot-wrap {
+  display: flex; justify-content: center; padding-top: 6px;
+  position: relative; z-index: 1;
+}
+.agenda-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--sky-deep);
+  box-shadow: 0 0 0 4px var(--white);
+}
+.agenda-row.peach .agenda-dot { border-color: var(--peach-deep); }
+.agenda-row.green .agenda-dot { border-color: var(--green); }
+.agenda-body {
+  background: var(--cream);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-md);
+  padding: 20px 24px;
+  transition: transform .18s, box-shadow .18s;
+}
+.agenda-row:hover .agenda-body {
+  transform: translateX(4px);
+  box-shadow: var(--sh-md);
+}
+.agenda-title {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+.agenda-desc {
+  font-size: 14px; color: var(--stone-2); line-height: 1.55;
+}
+.agenda-speaker {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 11px; font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  letter-spacing: .4px; text-transform: uppercase;
+}
+.as-peach { background: var(--peach-light); color: var(--peach-darker); }
+.as-sky   { background: var(--sky-light); color: var(--sky-dark); }
+.as-green { background: var(--green-light); color: #065F46; }
+.as-joint { background: #FEF3C7; color: #92400E; }
+
+/* ═══════════════════════════════════════════════════
+   TICKETS — Hormozi simple, one is featured
+   ═══════════════════════════════════════════════════ */
+.tickets {
+  background: var(--cream);
+}
+.tickets-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.tickets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+.ticket {
+  background: var(--white);
+  border: 2px solid var(--cream-3);
+  border-radius: var(--r-xl);
+  padding: 40px 32px 32px;
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: transform .22s, box-shadow .22s;
+}
+.ticket:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-lg);
+}
+.ticket.featured {
+  background: linear-gradient(175deg, var(--ink) 0%, var(--ink-2) 100%);
+  color: var(--white);
+  border-color: var(--ink);
+  box-shadow: var(--sh-lg);
+  transform: translateY(-12px);
+}
+.ticket.featured:hover {
+  transform: translateY(-16px);
+}
+.ticket-badge {
+  position: absolute;
+  top: -14px; left: 50%; transform: translateX(-50%);
+  padding: 6px 16px;
+  background: var(--peach-mid);
+  color: var(--white);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-md);
+}
+.ticket-name {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 14px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--stone);
+  margin-bottom: 14px;
+}
+.ticket.featured .ticket-name { color: rgba(255,255,255,.55); }
+.ticket-price {
+  display: flex; align-items: baseline; gap: 4px;
+  margin-bottom: 6px;
+}
+.ticket-price-num {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 64px;
+  color: var(--ink);
+  line-height: .9; letter-spacing: -2px;
+}
+.ticket.featured .ticket-price-num { color: var(--white); }
+.ticket-price-cur {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 26px; font-weight: 800;
+  color: var(--stone-2);
+}
+.ticket.featured .ticket-price-cur { color: rgba(255,255,255,.7); }
+.ticket-note {
+  font-size: 13px; color: var(--stone);
+  margin-bottom: 24px;
+}
+.ticket.featured .ticket-note { color: rgba(255,255,255,.6); }
+.ticket-divider {
+  height: 1px;
+  background: var(--cream-3);
+  margin: 8px 0 20px;
+}
+.ticket.featured .ticket-divider { background: rgba(255,255,255,.12); }
+.ticket-features {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 12px;
+  flex: 1; margin-bottom: 28px;
+}
+.tf {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14.5px; color: var(--stone-3); line-height: 1.45;
+}
+.ticket.featured .tf { color: rgba(255,255,255,.85); }
+.tf-check {
+  flex-shrink: 0; margin-top: 2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--green-light);
   display: flex; align-items: center; justify-content: center;
 }
-.who-pill {
-  font-size: 12px; font-weight: 700; padding: 5px 12px;
-  border-radius: 8px; text-align: center; line-height: 1.3;
+.tf-check svg { width: 11px; height: 11px; color: var(--green); }
+.ticket.featured .tf-check { background: rgba(16,185,129,.2); }
+.ticket.featured .tf-check svg { color: #34D399; }
+.tf-x {
+  flex-shrink: 0; margin-top: 2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--cream-2);
+  display: flex; align-items: center; justify-content: center;
 }
-.wp-both   { background: var(--gray-100); color: var(--gray-700); }
-.wp-nacho  { background: var(--amber-light); color: var(--amber-dark); }
-.wp-rob    { background: var(--blue-light); color: var(--blue-dark); }
-
-/* ─── TICKETS ──────────────────────────────────── */
-.tickets-bg {
-  background: linear-gradient(160deg, #EFF6FF 0%, #EEF2FF 100%);
+.tf-x svg { width: 10px; height: 10px; color: var(--stone); }
+.tf.disabled { color: var(--stone); text-decoration: line-through; }
+.ticket.featured .tf.disabled { color: rgba(255,255,255,.3); }
+.ticket.featured .tf-x { background: rgba(255,255,255,.08); }
+.ticket-cta .btn {
+  width: 100%;
+  padding: 16px 24px;
 }
-.tickets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-
-.ticket {
-  background: #fff; border: 1.5px solid var(--gray-200);
-  border-radius: 24px; padding: 32px 28px;
-  position: relative; overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform .2s, box-shadow .2s;
-  display: flex; flex-direction: column;
-}
-.ticket:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.ticket.featured {
-  border-color: var(--amber);
-  box-shadow: 0 0 0 4px rgba(245,158,11,.12), var(--shadow-lg);
-}
-.ticket-ribbon {
-  position: absolute; top: 24px; right: -30px;
-  background: linear-gradient(90deg, var(--amber), var(--red));
-  color: #fff; font-size: 10px; font-weight: 800;
-  padding: 5px 44px; transform: rotate(35deg);
-  letter-spacing: 1px;
-}
-
-.ticket-type { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); margin-bottom: 10px; }
-.ticket-price { font-family: 'Space Grotesk', sans-serif; font-size: 54px; font-weight: 800; color: var(--gray-900); line-height: 1; }
-.ticket-price sup { font-size: 24px; vertical-align: super; font-weight: 600; color: var(--gray-400); }
-.ticket-note { font-size: 13px; color: var(--gray-400); margin: 6px 0 24px; }
-.ticket-hr { height: 1px; background: var(--gray-200); margin-bottom: 24px; }
-
-.ticket-features { list-style: none; flex: 1; margin-bottom: 28px; }
-.ticket-features li {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 14px; color: var(--gray-700); line-height: 1.5;
-  padding: 7px 0; border-bottom: 1px solid var(--gray-100);
-}
-.ticket-features li:last-child { border-bottom: none; }
-.tick { flex-shrink: 0; margin-top: 1px; }
-.tick-green svg { color: var(--green); }
-.tick-amber svg { color: var(--amber-dark); }
-
-.btn-ticket {
-  display: block; text-align: center;
-  font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700;
-  padding: 14px; border-radius: var(--r); text-decoration: none;
+.ticket .btn-ticket {
+  background: var(--ink);
+  color: var(--white);
+  border-radius: var(--r-pill);
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 16px 24px;
+  border: none; cursor: pointer;
   transition: all .18s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
 }
-.bt-outline { background: #fff; color: var(--blue); border: 2px solid var(--blue); }
-.bt-outline:hover { background: var(--blue-light); }
-.bt-solid { background: var(--blue); color: #fff; box-shadow: var(--shadow-blue); }
-.bt-solid:hover { background: var(--blue-dark); transform: translateY(-1px); }
-.bt-amber { background: var(--amber); color: #fff; box-shadow: 0 8px 20px rgba(245,158,11,.3); }
-.bt-amber:hover { background: var(--amber-dark); transform: translateY(-1px); }
+.ticket .btn-ticket:hover {
+  background: var(--ink-2);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-md);
+}
+.ticket.featured .btn-ticket {
+  background: var(--peach-mid);
+  color: var(--white);
+  box-shadow: var(--sh-peach);
+}
+.ticket.featured .btn-ticket:hover {
+  background: var(--peach-deep);
+  box-shadow: var(--sh-peach-hv);
+}
+.ticket-urgency {
+  margin-top: 14px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 12px;
+  background: var(--peach-light);
+  color: var(--peach-darker);
+  border-radius: var(--r-sm);
+  font-size: 12px; font-weight: 600;
+}
+.ticket.featured .ticket-urgency {
+  background: rgba(255,190,152,.15);
+  color: var(--peach);
+}
+.ticket-urgency svg { width: 13px; height: 13px; }
 
-/* ─── FAQ ──────────────────────────────────────── */
-.faq-bg { background: var(--gray-50); }
-.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.faq-card {
-  background: #fff; border: 1px solid var(--gray-200);
-  border-radius: var(--r-lg); padding: 24px;
-  box-shadow: var(--shadow-sm);
+/* ═══════════════════════════════════════════════════
+   GUARANTEE — risk reversal (Hormozi principle)
+   ═══════════════════════════════════════════════════ */
+.guarantee {
+  background: var(--white);
+  padding: 80px 0;
 }
-.faq-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
-.faq-card p { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+.guarantee-box {
+  background: linear-gradient(135deg, var(--peach-pale) 0%, var(--white) 100%);
+  border: 2px dashed var(--peach-mid);
+  border-radius: var(--r-xl);
+  padding: clamp(36px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: center;
+  max-width: 980px; margin: 0 auto;
+}
+.guarantee-seal {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--peach-mid) 0%, var(--peach-deep) 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  box-shadow: var(--sh-peach);
+  flex-shrink: 0;
+}
+.guarantee-seal svg { width: 56px; height: 56px; }
+.guarantee-title {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 800; color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.guarantee-desc {
+  font-size: 15.5px; color: var(--stone-2); line-height: 1.6;
+}
+.guarantee-desc strong { color: var(--ink); }
 
-/* ─── FINAL CTA ─────────────────────────────────── */
-.final-cta {
-  background: linear-gradient(135deg, var(--blue) 0%, var(--indigo) 100%);
-  padding: 96px 0; text-align: center;
-  position: relative; overflow: hidden;
+/* ═══════════════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════════════ */
+.faq {
+  background: var(--cream);
 }
-.final-cta::before {
+.faq-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 72px;
+  align-items: start;
+}
+.faq-intro h2 { margin-bottom: 18px; }
+.faq-intro p { font-size: 16px; color: var(--stone-2); line-height: 1.65; }
+.faq-contact {
+  margin-top: 28px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-md);
+}
+.faq-contact-label {
+  font-size: 12px; color: var(--stone);
+  font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.faq-contact a {
+  color: var(--peach-deep);
+  font-weight: 700; text-decoration: none;
+  font-size: 15px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.faq-contact a:hover { text-decoration: underline; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.faq-item.open {
+  border-color: var(--peach-mid);
+  box-shadow: var(--sh-md);
+}
+.faq-q {
+  width: 100%; text-align: left;
+  padding: 22px 24px;
+  border: none; background: transparent; cursor: pointer;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--ink);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  transition: color .15s;
+}
+.faq-q:hover { color: var(--peach-deep); }
+.faq-q-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--cream-2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform .25s, background .2s;
+}
+.faq-q-icon svg { width: 14px; height: 14px; color: var(--stone-2); transition: color .2s; }
+.faq-item.open .faq-q-icon {
+  background: var(--peach-mid);
+  transform: rotate(45deg);
+}
+.faq-item.open .faq-q-icon svg { color: var(--white); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s cubic-bezier(.4,0,.2,1), padding .25s;
+  padding: 0 24px;
+  font-size: 14.5px; color: var(--stone-2); line-height: 1.65;
+}
+.faq-item.open .faq-a {
+  max-height: 260px;
+  padding: 0 24px 22px;
+}
+
+/* ═══════════════════════════════════════════════════
+   MEGA CTA — Hormozi signature dark conversion section
+   ═══════════════════════════════════════════════════ */
+.mega-cta {
+  background: var(--ink);
+  color: var(--white);
+  padding: clamp(80px, 12vw, 140px) 0;
+  position: relative;
+  overflow: hidden;
+}
+.mega-cta::before {
   content: '';
-  position: absolute; top: -100px; left: 50%;
-  transform: translateX(-50%);
-  width: 700px; height: 400px;
-  background: radial-gradient(ellipse, rgba(255,255,255,.1) 0%, transparent 65%);
+  position: absolute;
+  top: -50%; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(229,112,60,.22) 0%, transparent 60%);
   pointer-events: none;
 }
-.final-cta-inner { max-width: 580px; margin: 0 auto; position: relative; }
-.final-cta h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(28px, 4vw, 44px); font-weight: 800;
-  color: #fff; margin-bottom: 16px; letter-spacing: -0.5px;
-  line-height: 1.1;
+.mega-cta-inner {
+  position: relative;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.final-cta p { font-size: 18px; color: rgba(255,255,255,.75); margin-bottom: 40px; line-height: 1.7; }
-.final-price-note { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.6); }
+.mega-cta-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px;
+  background: rgba(255,190,152,.12);
+  border: 1px solid rgba(255,190,152,.25);
+  border-radius: var(--r-pill);
+  font-size: 12px; font-weight: 700;
+  color: var(--peach);
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.mega-cta-title {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: clamp(40px, 6.5vw, 84px);
+  line-height: .98;
+  letter-spacing: -2px;
+  color: var(--white);
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+.mega-cta-title span { color: var(--peach); }
+.mega-cta-sub {
+  font-size: clamp(17px, 1.8vw, 20px);
+  color: rgba(255,255,255,.7);
+  max-width: 620px;
+  margin: 0 auto 44px;
+  line-height: 1.55;
+}
+.mega-cta-meta {
+  margin-top: 28px;
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 24px;
+  font-size: 13.5px; color: rgba(255,255,255,.55);
+}
+.mega-cta-meta-item {
+  display: flex; align-items: center; gap: 7px;
+}
+.mega-cta-meta-item svg { width: 15px; height: 15px; color: var(--peach); }
 
-/* ─── FOOTER ─────────────────────────────────────── */
-footer {
-  background: var(--gray-900); padding: 32px 0;
+/* ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ */
+.footer {
+  background: var(--ink-2);
+  color: rgba(255,255,255,.5);
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
 }
 .footer-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 12px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
 }
-footer p { font-size: 13px; color: var(--gray-500); }
-footer a { color: var(--blue-mid); text-decoration: none; }
-
-/* ─── GITHUB SETUP BANNER ──────────────────────── */
-.setup-notice {
-  background: #FFFBEB; border: 1px solid #FDE68A; border-radius: var(--r);
-  padding: 14px 20px; margin: 20px 0;
-  font-size: 13px; color: var(--amber-dark); display: none;
+.footer-brand {
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,.7);
 }
+.footer-brand em { font-style: normal; color: var(--peach); }
+.footer-copy { font-size: 13px; }
+.footer-links {
+  display: flex; gap: 20px;
+  font-size: 13px;
+}
+.footer-links a {
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  transition: color .15s;
+}
+.footer-links a:hover { color: var(--peach); }
 
-/* ─── RESPONSIVE ────────────────────────────────── */
+/* ═══════════════════════════════════════════════════
+   STICKY FLOATING CTA (mobile)
+   ═══════════════════════════════════════════════════ */
+.sticky-cta {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 90;
+  padding: 12px 16px;
+  background: rgba(250,247,243,.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--cream-3);
+  box-shadow: 0 -4px 20px rgba(10,14,26,.08);
+}
+.sticky-cta .btn { width: 100%; }
+
+/* ═══════════════════════════════════════════════════
+   MODAL — preserved from original with visual upgrade
+   ═══════════════════════════════════════════════════ */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(10,14,26,.55);
+  backdrop-filter: blur(8px);
+  align-items: center; justify-content: center;
+  padding: 16px;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  width: 100%; max-width: 480px;
+  box-shadow: 0 32px 80px rgba(10,14,26,.3);
+  overflow: hidden;
+  animation: modalIn .25s cubic-bezier(.34,1.46,.64,1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(.94) translateY(16px); }
+  to   { opacity: 1; transform: scale(1)  translateY(0); }
+}
+.modal-header {
+  padding: 24px 28px 0;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+}
+.modal-ticket-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--peach-light);
+  border: 1px solid var(--peach);
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 12px; font-weight: 800;
+  color: var(--peach-darker);
+  letter-spacing: .5px; text-transform: uppercase;
+}
+.modal-close {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--cream); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background .15s;
+}
+.modal-close:hover { background: var(--cream-2); }
+.modal-close svg { width: 15px; height: 15px; color: var(--stone); }
+.modal-title {
+  padding: 16px 28px 0;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.15;
+  letter-spacing: -.3px;
+}
+.modal-subtitle {
+  padding: 8px 28px 0;
+  font-size: 14px; color: var(--stone-2); line-height: 1.6;
+}
+.modal-form { padding: 22px 28px 28px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 13px; font-weight: 600; color: var(--stone-3);
+  margin-bottom: 7px;
+}
+.form-group label .req { color: var(--peach-deep); margin-left: 2px; }
+.form-group input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid var(--cream-3);
+  border-radius: var(--r);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px; color: var(--ink);
+  background: var(--white);
+  transition: border-color .15s, box-shadow .15s;
+  outline: none;
+}
+.form-group input:focus {
+  border-color: var(--peach-mid);
+  box-shadow: 0 0 0 3px rgba(245,140,92,.15);
+}
+.form-group input::placeholder { color: #C7BDB4; }
+.form-group input.error {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(220,38,38,.1);
+}
+.field-error {
+  font-size: 12px; color: var(--red); margin-top: 5px; display: none;
+}
+.field-error.show { display: block; }
+.modal-divider { height: 1px; background: var(--cream-2); margin: 20px 0; }
+.modal-price-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 18px;
+  background: var(--cream);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--r);
+  margin-bottom: 16px;
+}
+.modal-price-label {
+  font-size: 13px; color: var(--stone-2); font-weight: 500;
+}
+.modal-price-value {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 26px; font-weight: 800; color: var(--peach-deep);
+}
+.modal-submit {
+  width: 100%; padding: 17px;
+  background: var(--peach-mid); color: var(--white);
+  border: none; border-radius: var(--r-pill);
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 16px; font-weight: 800;
+  cursor: pointer; transition: all .18s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: var(--sh-peach);
+  letter-spacing: .5px;
+}
+.modal-submit:hover {
+  background: var(--peach-deep);
+  transform: translateY(-1px);
+  box-shadow: var(--sh-peach-hv);
+}
+.modal-submit:disabled {
+  background: #D1C4A0; box-shadow: none;
+  cursor: not-allowed; transform: none;
+}
+.modal-submit svg { width: 17px; height: 17px; }
+.modal-secure {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  margin-top: 12px;
+  font-size: 12px; color: var(--stone); text-align: center;
+}
+.modal-secure svg { width: 14px; height: 14px; color: var(--green); }
+
+.modal-success {
+  display: none;
+  padding: 44px 28px;
+  text-align: center;
+}
+.modal-success.show { display: block; }
+.modal-form.hide { display: none; }
+.modal-header.hide, .modal-title.hide, .modal-subtitle.hide { display: none; }
+.success-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--green-light);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+.success-icon svg { width: 34px; height: 34px; color: var(--green); }
+.success-title {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px;
+}
+.success-text { font-size: 14.5px; color: var(--stone-2); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════ */
 @media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; padding: 56px 0 60px; }
-  .hero-speakers { order: -1; }
-  .stats-strip { grid-template-columns: repeat(3,1fr); }
-  .faq-grid { grid-template-columns: 1fr; }
-  nav .nav-links { display: none; }
-}
-@media (max-width: 640px) {
-  .section { padding: 60px 0; }
-  .agenda-row { grid-template-columns: 90px 1fr; }
-  .ag-who { display: none; }
-  .tickets-grid { grid-template-columns: 1fr; }
-  .proof-sep { display: none; }
-  .proof-inner { gap: 16px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-side { flex-direction: row; justify-content: center; gap: 20px; }
+  .hero-portrait { max-width: 140px; }
+  .hero-portrait-initial { font-size: clamp(80px, 18vw, 110px); }
+
+  .proof-inner { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
+  .proof-item:nth-child(2) { border-right: none; }
+  .proof-item { border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 16px; }
+  .proof-item:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
+
+  .pain-grid { grid-template-columns: 1fr; }
+  .offer-blocks { grid-template-columns: 1fr; }
+  .speakers-grid { grid-template-columns: 1fr; }
+
+  .tickets-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .ticket.featured { transform: none; order: -1; }
+  .ticket.featured:hover { transform: translateY(-4px); }
+
+  .faq-inner { grid-template-columns: 1fr; gap: 36px; }
+
+  .guarantee-box { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+  .guarantee-seal { margin: 0 auto; width: 96px; height: 96px; }
 }
 
-/* ─── SVG ICONS ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .nav-cta-desktop { display: none; }
+  .hero { padding: 110px 0 60px; }
+  .hero-side { flex-wrap: wrap; }
+  .hero-portrait { max-width: 120px; }
+  .agenda-timeline::before { left: 72px; }
+  .agenda-row { grid-template-columns: 60px 24px 1fr; gap: 12px; }
+  .agenda-time { font-size: 14px; }
+  .sticky-cta { display: block; }
+  body { padding-bottom: 80px; }
+  .proof-inner { grid-template-columns: 1fr; gap: 16px; }
+  .proof-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 14px; }
+  .proof-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .pain-card { padding: 28px 22px; }
+  .offer-block { padding: 32px 24px; }
+  .speaker-card { padding: 28px 22px; }
+  .sc-top { flex-direction: column; text-align: center; }
+  .sc-stats { grid-template-columns: 1fr 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
 </style>
 </head>
 <body>
 
-<!-- ─── NAV ─── -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <div class="nav-logo">
-      <div class="nav-logo-mark">
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2L14 6V10L8 14L2 10V6L8 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+<!-- ═══════════════════════════════════════════════
+     NAV
+     ═══════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <div class="brand-mark">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="brand-name">SolveED <span>×</span> NBEduca</span>
+      </a>
+      <div class="nav-links">
+        <a href="#contenido">Qué aprenderás</a>
+        <a href="#ponentes">Ponentes</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#entradas">Entradas</a>
       </div>
-      <span>SolveED <em>×</em> NBEduca</span>
+      <button onclick="openModal('earlybird')" class="btn btn-primary btn-sm nav-cta-desktop">
+        Reservar plaza
+      </button>
     </div>
-    <div class="nav-links">
-      <a href="#aprende">Contenido</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#tickets">Entradas</a>
-    </div>
-    <a href="#tickets" class="btn btn-primary" style="padding:9px 20px;font-size:14px;">
-      Reservar plaza
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M11 7L8 4M11 7L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </div>
 </nav>
 
-<!-- ─── HERO ─── -->
-<section class="hero">
-  <div class="container hero-inner">
+<!-- ═══════════════════════════════════════════════
+     HERO — Hormozi big-question style
+     ═══════════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-inner">
 
-    <!-- Left -->
-    <div class="hero-left">
-      <div class="hero-eyebrow">
-        <span class="dot"></span>
-        Webinar online &middot; 90 min en directo
+      <!-- LEFT portrait -->
+      <div class="hero-side">
+        <div class="hero-portrait left">
+          <div class="hero-portrait-shine"></div>
+          <div class="hero-portrait-initial">R</div>
+          <div class="hero-portrait-badge">
+            <div class="hp-name">Roberto</div>
+            <div class="hp-role">SolveED Academy</div>
+          </div>
+        </div>
+        <div class="hero-side-caption">Formación &amp; Certificaciones</div>
       </div>
 
-      <h1>
-        Todo lo que<br>necesitas saber<br>para trabajar en<br>
-        <span class="underline">una creche</span>&nbsp;<span class="accent">irlandesa</span>
-      </h1>
+      <!-- CENTER — massive headline + CTA -->
+      <div class="hero-center">
+        <div class="hero-chip-row">
+          <span class="live-chip">
+            <span class="live-dot"></span>
+            Webinar en directo · 29 de abril · 19:00h España
+          </span>
+        </div>
 
-      <p class="hero-desc">
-        Asesor&iacute;a grupal con los referentes en colocaci&oacute;n y formaci&oacute;n de educadores espa&ntilde;oles en Irlanda. Contrataci&oacute;n, tr&aacute;mites, d&iacute;a a d&iacute;a real y Q&amp;A en directo.
-      </p>
+        <h1 class="hero-h1">
+          ¿Quieres trabajar en un <strong>creche irlandés</strong> con las cosas claras?
+        </h1>
 
-      <div class="hero-meta-row">
-        <div class="meta-chip">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9H21M8 2V5M16 2V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <div><span class="mc-label">Fecha</span><span class="mc-value">Mi&eacute;rcoles 29 abril</span></div>
-        </div>
-        <div class="meta-chip">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <div><span class="mc-label">Hora Espa&ntilde;a</span><span class="mc-value">19:00 h</span></div>
-        </div>
-        <div class="meta-chip">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21H16M12 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <div><span class="mc-label">Formato</span><span class="mc-value">Online</span></div>
-        </div>
-        <div class="meta-chip">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L9 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <div><span class="mc-label">Duraci&oacute;n</span><span class="mc-value">90 minutos</span></div>
+        <p class="hero-sub">
+          Aprende del equipo que ha acompañado a <strong>500+ educadoras</strong> españolas a dar el salto a Irlanda — empleo, certificaciones y vida real en 90 minutos.
+        </p>
+
+        <div class="hero-cta-wrap">
+          <div class="hero-cta-row">
+            <button onclick="openModal('earlybird')" class="btn btn-mega">
+              Sí, quiero estar preparada
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+          <div class="hero-cta-note">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Early Bird desde 19€ · Aforo limitado · Pago seguro vía Revolut
+          </div>
         </div>
       </div>
 
-      <div class="hero-cta-row">
-        <a href="#tickets" class="btn btn-primary" style="font-size:17px;padding:16px 32px;">
-          Reservar plaza
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="hero-price">
-          <div class="hp-from">Desde solo</div>
-          <div class="hp-amount">19&euro;</div>
-          <div class="hp-note">Early Bird &middot; sube a 25&euro; en 48h</div>
+      <!-- RIGHT portrait -->
+      <div class="hero-side">
+        <div class="hero-portrait right">
+          <div class="hero-portrait-shine"></div>
+          <div class="hero-portrait-initial">N</div>
+          <div class="hero-portrait-badge">
+            <div class="hp-name">Nacho</div>
+            <div class="hp-role">NBEduca Recruitment</div>
+          </div>
+        </div>
+        <div class="hero-side-caption">Empleo &amp; Vida en Irlanda</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PROOF STRIP — dark Hormozi stat bar
+     ═══════════════════════════════════════════════ -->
+<section class="proof-strip">
+  <div class="container">
+    <div class="proof-inner">
+      <div class="proof-item">
+        <div class="proof-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div>
+          <div class="proof-number">500+</div>
+          <div class="proof-label">Educadoras en<br>comunidad</div>
+        </div>
+      </div>
+
+      <div class="proof-item">
+        <div class="proof-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="proof-number">2 expertos</div>
+          <div class="proof-label">Empleo + Formación<br>en el sector childcare</div>
+        </div>
+      </div>
+
+      <div class="proof-item">
+        <div class="proof-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="proof-number">90 min</div>
+          <div class="proof-label">Conocimiento real<br>+ Q&amp;A en directo</div>
+        </div>
+      </div>
+
+      <div class="proof-item">
+        <div class="proof-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="proof-number">Soporte</div>
+          <div class="proof-label">Acceso directo<br>por WhatsApp</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Right: speakers -->
-    <div class="hero-speakers">
+<!-- ═══════════════════════════════════════════════
+     PAIN — "Si te identificas con esto..."
+     ═══════════════════════════════════════════════ -->
+<section class="section pain">
+  <div class="container">
+    <div class="pain-header">
+      <div class="eyebrow">Este webinar es para ti si…</div>
+      <h2 class="display-lg" style="margin-top:18px">
+        Has pensado en Irlanda pero <span class="hi-underline">no sabes por dónde empezar</span>.
+      </h2>
+    </div>
 
-      <div class="speaker-card sc-amber">
-        <div class="speaker-ava ava-amber">
-          <svg viewBox="0 0 24 24" fill="none" color="#D97706"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20C4 16.686 7.582 14 12 14C16.418 14 20 16.686 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-quote">“</div>
+        <div class="pain-text">No sé qué certificaciones necesito.</div>
+        <div class="pain-sub">Garda Vetting, Aistear, primeros auxilios, inglés técnico… cada web dice una cosa distinta y no sabes cuál es prioritaria.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-quote">“</div>
+        <div class="pain-text">No sé cómo es trabajar allí de verdad.</div>
+        <div class="pain-sub">Los anuncios pintan bien pero nadie te cuenta el día a día, los sueldos reales ni qué buscan los creches en una educadora española.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-quote">“</div>
+        <div class="pain-text">Tengo miedo de llegar y perder meses.</div>
+        <div class="pain-sub">No quieres aterrizar, vivir de Airbnb y descubrir tres semanas después que te falta el papel más básico para trabajar.</div>
+      </div>
+    </div>
+
+    <div class="pain-footer">
+      <div class="pain-footer-text">
+        Si algo de esto te suena, <span class="hi-peach">este webinar es para ti</span>.
+      </div>
+      <button onclick="openModal('earlybird')" class="btn btn-primary">
+        Quiero llegar con las cosas claras
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     OFFER — 2 blocks: Empleo + Formación
+     ═══════════════════════════════════════════════ -->
+<section class="section offer" id="contenido">
+  <div class="container">
+    <div class="offer-header">
+      <div class="eyebrow eyebrow-sky">Qué te llevas</div>
+      <h2 class="display-lg" style="margin-top:18px">
+        90 minutos, <span class="hi-sky">cero teoría</span>.<br>
+        Dos bloques que resuelven <span class="hi-underline">lo que importa</span>.
+      </h2>
+      <p class="lead" style="margin-top:18px">Un plan claro para empleo y un plan claro para certificaciones — sin rodeos, con los nombres, los pasos y el orden exacto.</p>
+    </div>
+
+    <div class="offer-blocks">
+
+      <!-- Bloque 1 — Nacho -->
+      <div class="offer-block ob-sky">
+        <div class="offer-block-num">01</div>
+        <div class="offer-block-eyebrow">Bloque 1 · Nacho — NBEduca</div>
+        <h3 class="offer-block-title">Empleo real en Irlanda</h3>
+        <p class="offer-block-lead">Cómo funciona el mercado laboral en los creches irlandeses, qué buscan los empleadores y cómo organizar la llegada sin sustos.</p>
+        <ul class="offer-checklist">
+          <li>Cómo está el mercado y qué perfil se llevan los mejores puestos</li>
+          <li>Visado, PPS, contrato y marco legal en cristalino</li>
+          <li>Cómo preparar CV y entrevista para el sector irlandés</li>
+          <li>Qué hacer los primeros 15 días cuando aterrizas</li>
+          <li>Errores típicos que hacen perder tiempo y dinero</li>
+        </ul>
+      </div>
+
+      <!-- Bloque 2 — Roberto -->
+      <div class="offer-block ob-peach">
+        <div class="offer-block-num">02</div>
+        <div class="offer-block-eyebrow">Bloque 2 · Roberto — SolveED Academy</div>
+        <h3 class="offer-block-title">Formación y certificaciones</h3>
+        <p class="offer-block-lead">El roadmap completo para adaptar tu formación española a los estándares irlandeses — en qué orden hacer cada cosa para llegar lista.</p>
+        <ul class="offer-checklist">
+          <li>Garda Vetting: qué es, cómo tramitarla y tiempos reales</li>
+          <li>Primeros auxilios pediátricos y certificaciones clave</li>
+          <li>Aistear, Síolta y marcos educativos irlandeses explicados</li>
+          <li>Inglés técnico del sector infantil — lo que usarás cada día</li>
+          <li>Convalidación de titulación española: lo que sí funciona</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offer-value-strip">
+      <div class="ovs-text">
+        + Q&amp;A en directo al final. <strong>Respuestas reales</strong>, no frases de manual.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SPEAKERS — authority + numbers
+     ═══════════════════════════════════════════════ -->
+<section class="section speakers" id="ponentes">
+  <div class="container">
+    <div class="speakers-header">
+      <div class="eyebrow">Quién te va a enseñar</div>
+      <h2 class="display-lg" style="margin-top:18px">
+        Dos expertos que <span class="hi-underline">han vivido el proceso</span> desde dentro.
+      </h2>
+    </div>
+
+    <div class="speakers-grid">
+
+      <!-- Roberto -->
+      <div class="speaker-card">
+        <div class="sc-top">
+          <div class="sc-avatar peach">R</div>
+          <div class="sc-meta">
+            <div class="sc-name">Roberto</div>
+            <div class="sc-role">Fundador SolveED Academy</div>
+            <span class="sc-tag peach">Formación &amp; Certificaciones</span>
+          </div>
         </div>
-        <div class="speaker-body">
-          <div class="speaker-name">Nacho</div>
-          <div class="speaker-org">NBEduca Recruitment &mdash; Especialista en colocaci&oacute;n</div>
-          <span class="tag tag-amber">Tr&aacute;mites &amp; Colocaci&oacute;n</span>
+        <p class="sc-bio">
+          Ha sido manager en creches irlandeses y ha formado a cientos de educadoras desde el día a día real. Conoce el sistema por dentro: sabe qué certificaciones pesan de verdad en una entrevista y cuáles son puro papel.
+        </p>
+        <div class="sc-stats">
+          <div class="sc-stat">
+            <div class="sc-stat-num peach-num">200+</div>
+            <div class="sc-stat-label">Educadoras formadas desde su experiencia como mánager</div>
+          </div>
+          <div class="sc-stat">
+            <div class="sc-stat-num peach-num">5 años</div>
+            <div class="sc-stat-label">Experiencia directa en creches en Irlanda</div>
+          </div>
         </div>
       </div>
 
-      <div class="speaker-card sc-blue">
-        <div class="speaker-ava ava-blue">
-          <svg viewBox="0 0 24 24" fill="none" color="#2563EB"><path d="M12 3L22 8V16L12 21L2 16V8L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 3V21M2 8L22 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <!-- Nacho -->
+      <div class="speaker-card">
+        <div class="sc-top">
+          <div class="sc-avatar sky">N</div>
+          <div class="sc-meta">
+            <div class="sc-name">Nacho</div>
+            <div class="sc-role">Fundador NBEduca Recruitment</div>
+            <span class="sc-tag sky">Empleo &amp; Vida en Irlanda</span>
+          </div>
         </div>
-        <div class="speaker-body">
-          <div class="speaker-name">Roberto</div>
-          <div class="speaker-org">SolveED Academy &mdash; Childcare Manager en Irlanda</div>
-          <span class="tag tag-blue">Formaci&oacute;n &amp; Desarrollo</span>
-        </div>
-      </div>
-
-      <div class="stats-strip">
-        <div class="stat-item">
-          <div class="sn">500+</div>
-          <div class="sl">Educadores en comunidad</div>
-        </div>
-        <div class="stat-item">
-          <div class="sn">[X]+</div>
-          <div class="sl">Colocaciones en Irlanda</div>
-        </div>
-        <div class="stat-item">
-          <div class="sn">90<small style="font-size:16px"> min</small></div>
-          <div class="sl">Contenido denso y directo</div>
+        <p class="sc-bio">
+          Especialista en recolocación del sector educativo España→Irlanda. Ha acompañado personalmente el salto de 200+ profesionales — desde el primer email al empleador hasta el primer día en el creche.
+        </p>
+        <div class="sc-stats">
+          <div class="sc-stat">
+            <div class="sc-stat-num sky-num">200+</div>
+            <div class="sc-stat-label">Personas acompañadas en su salto España→Irlanda</div>
+          </div>
+          <div class="sc-stat">
+            <div class="sc-stat-num sky-num">+50</div>
+            <div class="sc-stat-label">Creches irlandeses en la red de NBEduca</div>
+          </div>
         </div>
       </div>
 
@@ -599,281 +1744,615 @@ footer a { color: var(--blue-mid); text-decoration: none; }
   </div>
 </section>
 
-<!-- ─── PROOF BAR ─── -->
-<div class="proof-bar">
-  <div class="container proof-inner">
-    <div class="proof-item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-      <span><strong>Experiencia real</strong> en el sistema irland&eacute;s de childcare</span>
+<!-- ═══════════════════════════════════════════════
+     AGENDA
+     ═══════════════════════════════════════════════ -->
+<section class="section agenda" id="agenda">
+  <div class="container-tight">
+    <div class="agenda-header">
+      <div class="eyebrow eyebrow-sky">Programa minuto a minuto</div>
+      <h2 class="display-lg" style="margin-top:18px">
+        90 minutos <span class="hi-sky">bien aprovechados</span>.
+      </h2>
     </div>
-    <div class="proof-sep"></div>
-    <div class="proof-item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M21 15C21 16.657 19.657 18 18 18H7L3 22V6C3 4.343 4.343 3 6 3H18C19.657 3 21 4.343 21 6V15Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-      <span><strong>Q&amp;A en directo</strong> &mdash; tus preguntas respondidas al momento</span>
-    </div>
-    <div class="proof-sep"></div>
-    <div class="proof-item">
-      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M10 8L16 12L10 16V8Z" fill="currentColor"/></svg>
-      <span><strong>Grabaci&oacute;n incluida</strong> durante 7 d&iacute;as</span>
-    </div>
-    <div class="proof-sep"></div>
-    <div class="proof-item">
-      <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="3" stroke="currentColor" stroke-width="2"/><path d="M2 10H22" stroke="currentColor" stroke-width="2"/></svg>
-      <span><strong>Pago seguro</strong> v&iacute;a Revolut Business</span>
-    </div>
-  </div>
-</div>
 
-<!-- ─── APRENDE ─── -->
-<section id="aprende" class="section learn-bg">
-  <div class="container">
-    <div class="section-label">El contenido</div>
-    <h2 class="section-title">Qu&eacute; vas a aprender en 90 minutos</h2>
-    <p class="section-sub">Dos bloques complementarios. Todo lo que necesitas antes de llegar y una vez que est&aacute;s dentro.</p>
-
-    <div class="learn-grid">
-
-      <div class="learn-card">
-        <div class="icon-box ib-amber">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/></svg>
-        </div>
-        <div class="learn-card-body">
-          <h4>El mercado laboral real</h4>
-          <p>Salarios reales, turnos, nivel de cualificaci&oacute;n seg&uacute;n tu formaci&oacute;n y empresas que merece la pena &mdash; y las que hay que evitar.</p>
+    <div class="agenda-timeline">
+      <div class="agenda-row">
+        <div class="agenda-time">19:00</div>
+        <div class="agenda-dot-wrap"><div class="agenda-dot"></div></div>
+        <div class="agenda-body">
+          <div class="agenda-title">Bienvenida y contexto</div>
+          <div class="agenda-desc">Cómo está el sector childcare Irlanda en 2026 y por qué ahora es el momento.</div>
+          <span class="agenda-speaker as-joint">Roberto &amp; Nacho</span>
         </div>
       </div>
 
-      <div class="learn-card">
-        <div class="icon-box ib-blue">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M9 12H15M9 8H15M9 16H12M5 3H19C20.1 3 21 3.9 21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-        <div class="learn-card-body">
-          <h4>El proceso de contrataci&oacute;n</h4>
-          <p>C&oacute;mo funciona la entrevista en una creche irlandesa, qu&eacute; documentos necesitas y c&oacute;mo gestionar las traducciones juradas.</p>
-        </div>
-      </div>
-
-      <div class="learn-card">
-        <div class="icon-box ib-green">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M3 9L12 2L21 9V20C21 20.55 20.55 21 20 21H15V15H9V21H4C3.45 21 3 20.55 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="learn-card-body">
-          <h4>Tr&aacute;mites desde cero</h4>
-          <p>PPS Number, cuenta bancaria, tarjeta de transporte y alojamiento: el orden correcto para no perder tiempo ni dinero.</p>
+      <div class="agenda-row">
+        <div class="agenda-time">19:10</div>
+        <div class="agenda-dot-wrap"><div class="agenda-dot"></div></div>
+        <div class="agenda-body">
+          <div class="agenda-title">Bloque 1 — Empleo e integración laboral</div>
+          <div class="agenda-desc">Mercado, marco legal, contratos, CV, entrevista y primeros pasos cuando aterrizas.</div>
+          <span class="agenda-speaker as-sky">Nacho · NBEduca</span>
         </div>
       </div>
 
-      <div class="learn-card">
-        <div class="icon-box ib-indigo">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M3 21V17C3 14.79 4.79 13 7 13H11C13.21 13 15 14.79 15 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 3.13C17.16 3.42 18 4.48 18 5.75C18 7.02 17.16 8.08 16 8.37" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 21V19C20.99 17.74 20.16 16.68 19 16.38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-        <div class="learn-card-body">
-          <h4>El d&iacute;a a d&iacute;a en la creche</h4>
-          <p>Ratios, responsabilidades, headcount, safe sleep y el lenguaje t&aacute;cito del aula que nadie te explica en el contrato.</p>
-        </div>
-      </div>
-
-      <div class="learn-card">
-        <div class="icon-box ib-red">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 9V13M12 17H12.01M10.29 3.86L1.82 18C1.64 18.3 1.55 18.64 1.55 18.99C1.55 20.1 2.45 21 3.56 21H20.44C21.55 21 22.45 20.1 22.45 18.99C22.45 18.64 22.36 18.3 22.18 18L13.71 3.86C13.53 3.57 13.28 3.33 12.98 3.17C12.68 3.01 12.34 2.93 12 2.93C11.66 2.93 11.32 3.01 11.02 3.17C10.72 3.33 10.47 3.57 10.29 3.86Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="learn-card-body">
-          <h4>Las situaciones que m&aacute;s asustan</h4>
-          <p>Mordidas, accidentes, over-ratio, ni&ntilde;os que no comen: protocolo exacto y qu&eacute; decirle a familias y managers en cada caso.</p>
+      <div class="agenda-row peach">
+        <div class="agenda-time">19:40</div>
+        <div class="agenda-dot-wrap"><div class="agenda-dot"></div></div>
+        <div class="agenda-body">
+          <div class="agenda-title">Bloque 2 — Formación y certificaciones</div>
+          <div class="agenda-desc">Garda Vetting, primeros auxilios, Aistear, inglés técnico y roadmap completo.</div>
+          <span class="agenda-speaker as-peach">Roberto · SolveED</span>
         </div>
       </div>
 
-      <div class="learn-card">
-        <div class="icon-box ib-teal">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="learn-card-body">
-          <h4>C&oacute;mo avanzar, no solo sobrevivir</h4>
-          <p>Aistear framework, cualificaciones QQI y c&oacute;mo pasar de Room Assistant a Room Leader en 12 meses.</p>
+      <div class="agenda-row green">
+        <div class="agenda-time">20:10</div>
+        <div class="agenda-dot-wrap"><div class="agenda-dot"></div></div>
+        <div class="agenda-body">
+          <div class="agenda-title">Q&amp;A en directo — casos reales</div>
+          <div class="agenda-desc">Preguntas del público sin guión. Respuestas directas de los dos expertos.</div>
+          <span class="agenda-speaker as-green">Sesión abierta</span>
         </div>
       </div>
 
+      <div class="agenda-row">
+        <div class="agenda-time">20:25</div>
+        <div class="agenda-dot-wrap"><div class="agenda-dot"></div></div>
+        <div class="agenda-body">
+          <div class="agenda-title">Próximos pasos &amp; cierre</div>
+          <div class="agenda-desc">Recursos compartidos, dónde seguir y cómo continuar el camino con cada uno de nosotros.</div>
+          <span class="agenda-speaker as-joint">Roberto &amp; Nacho</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── AGENDA ─── -->
-<section id="agenda" class="section agenda-bg">
+<!-- ═══════════════════════════════════════════════
+     TICKETS
+     ═══════════════════════════════════════════════ -->
+<section class="section tickets" id="entradas">
   <div class="container">
-    <div class="section-label">El programa</div>
-    <h2 class="section-title">Agenda &mdash; 90 minutos al m&iacute;limetro</h2>
-    <p class="section-sub">Cada bloque tiene un prop&oacute;sito concreto. Sin relleno.</p>
-
-    <div class="agenda-list">
-
-      <div class="agenda-row">
-        <div class="ag-time">00:00</div>
-        <div class="ag-content">
-          <strong>Bienvenida y presentaci&oacute;n</strong>
-          <span>Qui&eacute;nes somos, qu&eacute; vais a conseguir hoy y c&oacute;mo funciona el Q&amp;A</span>
-        </div>
-        <div class="ag-who"><span class="who-pill wp-both">Ambos</span></div>
-      </div>
-
-      <div class="agenda-row">
-        <div class="ag-time">10:00</div>
-        <div class="ag-content">
-          <strong>Antes de llegar &mdash; mercado, contratos, tr&aacute;mites y contrataci&oacute;n</strong>
-          <span>Mercado laboral real &middot; Proceso de contrataci&oacute;n &middot; PPS, banco y alojamiento &middot; Lo que necesitas s&iacute; o s&iacute;</span>
-        </div>
-        <div class="ag-who"><span class="who-pill wp-nacho">Nacho</span></div>
-      </div>
-
-      <div class="agenda-row">
-        <div class="ag-time">38:00</div>
-        <div class="ag-content">
-          <strong>Una vez dentro &mdash; el d&iacute;a a d&iacute;a real de una creche irlandesa</strong>
-          <span>Expectativas t&aacute;citas &middot; Ratios y responsabilidades &middot; Situaciones de emergencia &middot; Aistear y c&oacute;mo avanzar</span>
-        </div>
-        <div class="ag-who"><span class="who-pill wp-rob">Roberto</span></div>
-      </div>
-
-      <div class="agenda-row">
-        <div class="ag-time">58:00</div>
-        <div class="ag-content">
-          <strong>Demo SolveED Academy</strong>
-          <span>Mini lecci&oacute;n en directo del curso de formaci&oacute;n para educadores en Irlanda</span>
-        </div>
-        <div class="ag-who"><span class="who-pill wp-rob">Roberto</span></div>
-      </div>
-
-      <div class="agenda-row">
-        <div class="ag-time">68:00</div>
-        <div class="ag-content">
-          <strong>Q&amp;A en directo &mdash; tus preguntas respondidas</strong>
-          <span>Turno libre con los dos ponentes. Sin filtros.</span>
-          <div class="ag-tip">Puedes enviar tus preguntas por adelantado al confirmar la inscripci&oacute;n</div>
-        </div>
-        <div class="ag-who"><span class="who-pill wp-both">Ambos</span></div>
-      </div>
-
-      <div class="agenda-row">
-        <div class="ag-time">83:00</div>
-        <div class="ag-content">
-          <strong>Cierre y oferta exclusiva para asistentes</strong>
-          <span>SolveED Academy con descuento especial &mdash; solo 48h tras el webinar</span>
-        </div>
-        <div class="ag-who"><span class="who-pill wp-rob">Roberto</span></div>
-      </div>
-
+    <div class="tickets-header">
+      <div class="eyebrow">Elige tu entrada</div>
+      <h2 class="display-lg" style="margin-top:18px">
+        Tres formas de entrar.<br>
+        <span class="hi-peach">Una recomendada</span>.
+      </h2>
+      <p class="lead" style="margin-top:14px">Aforo limitado. El Early Bird son solo 15 plazas — cuando se agotan, el precio sube.</p>
     </div>
-  </div>
-</section>
-
-<!-- ─── TICKETS ─── -->
-<section id="tickets" class="section tickets-bg">
-  <div class="container">
-    <div class="section-label">Reserva tu plaza</div>
-    <h2 class="section-title">Elige tu entrada</h2>
-    <p class="section-sub">Plazas limitadas. El precio Early Bird desaparece en 48h.</p>
 
     <div class="tickets-grid">
 
       <!-- Early Bird -->
       <div class="ticket">
-        <div class="ticket-type">Early Bird</div>
-        <div class="ticket-price"><sup>€</sup>19</div>
-        <div class="ticket-note">Solo 48h desde el anuncio. Despu&eacute;s sube a 25&euro;.</div>
-        <div class="ticket-hr"></div>
+        <div class="ticket-name">Early Bird</div>
+        <div class="ticket-price">
+          <span class="ticket-price-cur">€</span>
+          <span class="ticket-price-num">19</span>
+        </div>
+        <div class="ticket-note">Solo primeras 15 plazas</div>
+        <div class="ticket-divider"></div>
         <ul class="ticket-features">
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Acceso al webinar en directo</li>
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Grabaci&oacute;n disponible 7 d&iacute;as</li>
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Chat y Q&amp;A en tiempo real</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Acceso al webinar en directo</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Q&amp;A en vivo con los dos expertos</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Material descargable post-sesión</li>
+          <li class="tf disabled"><span class="tf-x"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Grabación de la sesión</li>
+          <li class="tf disabled"><span class="tf-x"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Descuento en cursos SolveED</li>
         </ul>
-        <a href="https://checkout.revolut.com/pay/760b7dfb-52fb-412e-8abc-54fc0f7ab476" class="btn-ticket bt-outline">Reservar por 19&euro;</a>
+        <div class="ticket-cta">
+          <button onclick="openModal('earlybird')" class="btn-ticket">Comprar por 19€</button>
+        </div>
+        <div class="ticket-urgency">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          Quedan plazas Early Bird
+        </div>
+      </div>
+
+      <!-- Premium — FEATURED -->
+      <div class="ticket featured">
+        <span class="ticket-badge">Más recomendada</span>
+        <div class="ticket-name">Premium</div>
+        <div class="ticket-price">
+          <span class="ticket-price-cur">€</span>
+          <span class="ticket-price-num">35</span>
+        </div>
+        <div class="ticket-note">Todo incluido · acceso para siempre</div>
+        <div class="ticket-divider"></div>
+        <ul class="ticket-features">
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Acceso al webinar en directo</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Q&amp;A en vivo con los dos expertos</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Material descargable post-sesión</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> <strong>Grabación completa — la ves cuando quieras</strong></li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> <strong>Descuento exclusivo en cursos SolveED</strong></li>
+        </ul>
+        <div class="ticket-cta">
+          <button onclick="openModal('premium')" class="btn-ticket">
+            Quiero Premium por 35€
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div class="ticket-urgency">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
+            <polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5 12 2"/>
+          </svg>
+          La que eligen la mayoría
+        </div>
       </div>
 
       <!-- Estándar -->
       <div class="ticket">
-        <div class="ticket-type">Est&aacute;ndar</div>
-        <div class="ticket-price"><sup>€</sup>25</div>
-        <div class="ticket-note">Precio habitual del webinar.</div>
-        <div class="ticket-hr"></div>
+        <div class="ticket-name">Estándar</div>
+        <div class="ticket-price">
+          <span class="ticket-price-cur">€</span>
+          <span class="ticket-price-num">25</span>
+        </div>
+        <div class="ticket-note">Precio habitual</div>
+        <div class="ticket-divider"></div>
         <ul class="ticket-features">
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Acceso al webinar en directo</li>
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Grabaci&oacute;n disponible 7 d&iacute;as</li>
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Chat y Q&amp;A en tiempo real</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Acceso al webinar en directo</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Q&amp;A en vivo con los dos expertos</li>
+          <li class="tf"><span class="tf-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Material descargable post-sesión</li>
+          <li class="tf disabled"><span class="tf-x"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Grabación de la sesión</li>
+          <li class="tf disabled"><span class="tf-x"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Descuento en cursos SolveED</li>
         </ul>
-        <a href="[LINK-REVOLUT-ESTANDAR]" class="btn-ticket bt-solid">Reservar por 25&euro;</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="ticket featured">
-        <div class="ticket-ribbon">MAS COMPLETO</div>
-        <div class="ticket-type">Premium</div>
-        <div class="ticket-price"><sup>€</sup>35</div>
-        <div class="ticket-note">Todo lo anterior m&aacute;s la gu&iacute;a completa de PPS y alojamiento.</div>
-        <div class="ticket-hr"></div>
-        <ul class="ticket-features">
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Acceso al webinar en directo</li>
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Grabaci&oacute;n disponible 7 d&iacute;as</li>
-          <li><span class="tick tick-green"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Chat y Q&amp;A en tiempo real</li>
-          <li><span class="tick tick-amber"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.854 4.757L13 5.371L10 8.292L10.708 12.421L7 10.5L3.292 12.421L4 8.292L1 5.371L5.146 4.757L7 1Z" fill="currentColor"/></svg></span> <strong>Gu&iacute;a PDF: PPS Number y alojamiento</strong></li>
-        </ul>
-        <a href="[LINK-REVOLUT-PREMIUM]" class="btn-ticket bt-amber">Reservar por 35&euro;</a>
+        <div class="ticket-cta">
+          <button onclick="openModal('estandar')" class="btn-ticket">Comprar por 25€</button>
+        </div>
       </div>
 
     </div>
-
-    <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--gray-400);">
-      Pago seguro v&iacute;a Revolut Business &middot; Recibes el acceso por WhatsApp tras el pago
-    </p>
   </div>
 </section>
 
-<!-- ─── FAQ ─── -->
-<section class="section faq-bg">
+<!-- ═══════════════════════════════════════════════
+     GUARANTEE — risk reversal (Hormozi)
+     ═══════════════════════════════════════════════ -->
+<section class="guarantee">
   <div class="container">
-    <div class="section-label">Dudas</div>
-    <h2 class="section-title">Preguntas frecuentes</h2>
-    <div class="faq-grid">
-      <div class="faq-card">
-        <h4>&iquest;Necesito tener ingl&eacute;s avanzado?</h4>
-        <p>No. El webinar es 100&nbsp;% en espa&ntilde;ol. El nivel de ingl&eacute;s necesario para trabajar en Irlanda s&iacute; se trata durante el evento.</p>
+    <div class="guarantee-box">
+      <div class="guarantee-seal">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10" stroke-width="2.4"/>
+        </svg>
       </div>
-      <div class="faq-card">
-        <h4>&iquest;Qu&eacute; pasa si no puedo asistir en directo?</h4>
-        <p>Todos los tickets incluyen la grabaci&oacute;n durante 7 d&iacute;as. Puedes enviar tus preguntas por adelantado y las respondemos en el Q&amp;A.</p>
-      </div>
-      <div class="faq-card">
-        <h4>&iquest;C&oacute;mo recibo el link de acceso?</h4>
-        <p>Tras el pago por Revolut te enviamos el link de Google Meet por WhatsApp, con recordatorio 24h y 1h antes del inicio.</p>
-      </div>
-      <div class="faq-card">
-        <h4>&iquest;Es necesario el t&iacute;tulo universitario reconocido?</h4>
-        <p>Depende de tu formaci&oacute;n y el tipo de puesto. Este es uno de los temas centrales del webinar: opciones reales seg&uacute;n tu situaci&oacute;n concreta.</p>
+      <div>
+        <h3 class="guarantee-title">Garantía cero-riesgo: si no te aporta, te devolvemos el dinero.</h3>
+        <p class="guarantee-desc">
+          Si al terminar el webinar consideras que <strong>no te ha aportado valor real</strong> sobre tu proceso de Irlanda, nos lo dices por WhatsApp en las 48h siguientes y te devolvemos el 100% del importe. Sin preguntas ni formularios.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── FINAL CTA ─── -->
-<section class="final-cta">
+<!-- ═══════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════ -->
+<section class="section faq">
   <div class="container">
-    <div class="final-cta-inner">
-      <h2>Tu experiencia en Irlanda empieza con la informaci&oacute;n correcta</h2>
-      <p>90 minutos pueden ahorrarte meses de confusi&oacute;n. No vengas sin saber lo que te espera.</p>
-      <a href="#tickets" class="btn btn-amber" style="font-size:17px;padding:16px 36px;display:inline-flex;margin:0 auto;">
-        Reservar mi plaza
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <p class="final-price-note">Plazas limitadas &middot; Early Bird desde 19&euro;</p>
+    <div class="faq-inner">
+      <div class="faq-intro">
+        <div class="eyebrow">Preguntas frecuentes</div>
+        <h2 class="display-md" style="margin-top:18px">
+          Tienes dudas.<br>
+          <span class="hi-peach">Nosotros respuestas.</span>
+        </h2>
+        <p>Si no encuentras lo que buscas, escríbenos directamente por WhatsApp — contestamos siempre.</p>
+        <div class="faq-contact">
+          <div class="faq-contact-label">Habla con nosotros</div>
+          <a href="https://wa.me/34600000000">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            WhatsApp directo
+          </a>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>¿Necesito experiencia previa trabajando en Irlanda?</span>
+            <span class="faq-q-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">No. Está diseñado tanto para quien está evaluando el salto como para quien ya tiene el proceso en marcha y quiere información concreta sobre certificaciones y empleo.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>¿Cuándo recibiré el enlace al Google Meet?</span>
+            <span class="faq-q-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">Por email y WhatsApp, al menos 24h antes del webinar. Si no lo has recibido la víspera, escríbenos y te lo reenviamos en el momento.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>¿Puedo ver la grabación si no puedo asistir?</span>
+            <span class="faq-q-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">La grabación viene incluida únicamente con la entrada Premium (35€). Early Bird y Estándar son solo en directo — si sabes que no puedes asistir, elige Premium.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>¿El pago es seguro?</span>
+            <span class="faq-q-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">Sí. El pago lo procesa Revolut Business, una plataforma financiera regulada. Nosotros no vemos ni almacenamos ningún dato de tarjeta.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>¿Y si el webinar no me aporta valor?</span>
+            <span class="faq-q-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">Te devolvemos el 100% del importe si nos lo dices en las 48h posteriores al webinar. Sin formularios ni justificaciones largas — un mensaje de WhatsApp y listo.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>¿Y si tenéis que cancelar?</span>
+            <span class="faq-q-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">En ese caso improbable te avisamos de inmediato y eliges: reembolso íntegro o nueva fecha. Tú decides.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
-<footer>
-  <div class="container footer-inner">
-    <p>&copy; 2026 <a href="#">SolveED Academy</a> &times; <a href="#">NBEduca Recruitment</a></p>
-    <p>&iquest;Dudas? Esch&iacute;benos por WhatsApp</p>
+<!-- ═══════════════════════════════════════════════
+     MEGA CTA — Hormozi signature dark closer
+     ═══════════════════════════════════════════════ -->
+<section class="mega-cta">
+  <div class="container">
+    <div class="mega-cta-inner">
+      <div class="mega-cta-eyebrow">
+        <span class="live-dot"></span>
+        29 de abril · 19:00h · Quedan pocas plazas
+      </div>
+      <h2 class="mega-cta-title">
+        Quien llega <span>preparada</span>,<br>
+        <span>llega con ventaja</span>.
+      </h2>
+      <p class="mega-cta-sub">
+        No pierdas meses aterrizando sin plan. En 90 minutos sales sabiendo exactamente qué tienes que hacer, en qué orden y a quién acudir.
+      </p>
+      <button onclick="openModal('earlybird')" class="btn btn-mega">
+        Reservar mi plaza — 19€
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <div class="mega-cta-meta">
+        <div class="mega-cta-meta-item">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+          Garantía de devolución 48h
+        </div>
+        <div class="mega-cta-meta-item">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+          Pago seguro Revolut
+        </div>
+        <div class="mega-cta-meta-item">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+          Soporte por WhatsApp
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark" style="width:28px;height:28px;border-radius:7px">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" style="width:14px;height:14px">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        SolveED Academy <em>×</em> NBEduca Recruitment
+      </div>
+      <div class="footer-copy">Webinar · 29 de abril · Google Meet</div>
+      <div class="footer-links">
+        <a href="https://wa.me/34600000000">WhatsApp</a>
+        <a href="#top">Volver arriba</a>
+      </div>
+    </div>
   </div>
 </footer>
 
+<!-- ═══════════════════════════════════════════════
+     STICKY MOBILE CTA
+     ═══════════════════════════════════════════════ -->
+<div class="sticky-cta">
+  <button onclick="openModal('earlybird')" class="btn btn-primary">
+    Reservar plaza — 19€
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     MODAL
+     ═══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-header" id="modal-header">
+      <span class="modal-ticket-badge" id="modal-badge">Early Bird · 19€</span>
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-title" id="modal-title">Un paso antes del pago</div>
+    <div class="modal-subtitle" id="modal-subtitle">Déjanos tus datos para enviarte el enlace del Google Meet y los materiales del webinar.</div>
+
+    <form class="modal-form" id="modal-form" novalidate onsubmit="handleSubmit(event)">
+      <input type="hidden" name="ticket_tipo" id="hidden-ticket">
+
+      <div class="form-group">
+        <label for="f-nombre">Nombre completo <span class="req">*</span></label>
+        <input type="text" id="f-nombre" name="nombre" placeholder="Tu nombre y apellido" autocomplete="name" required>
+        <div class="field-error" id="err-nombre">Por favor, introduce tu nombre completo.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="f-email">Email <span class="req">*</span></label>
+        <input type="email" id="f-email" name="email" placeholder="tucorreo@email.com" autocomplete="email" required>
+        <div class="field-error" id="err-email">Introduce un email válido para recibir el acceso.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="f-telefono">Teléfono (WhatsApp) <span class="req">*</span></label>
+        <input type="tel" id="f-telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel" required>
+        <div class="field-error" id="err-telefono">Necesitamos tu número para enviarte el enlace por WhatsApp.</div>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-price-row">
+        <span class="modal-price-label">Total a pagar</span>
+        <span class="modal-price-value" id="modal-price-display">19€</span>
+      </div>
+
+      <button type="submit" class="modal-submit" id="modal-submit-btn">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Continuar al pago seguro
+      </button>
+
+      <div class="modal-secure">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Pago procesado por Revolut Business · 100% seguro
+      </div>
+    </form>
+
+    <div class="modal-success" id="modal-success">
+      <div class="success-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <div class="success-title">¡Perfecto! Redirigiendo al pago…</div>
+      <p class="success-text">En unos segundos abrirá la pasarela de Revolut para completar tu compra de forma segura.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ─── NAV SCROLL STATE ─────────────────────────── */
+const nav = document.getElementById('nav');
+const onScroll = () => {
+  if (window.scrollY > 10) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ─── FAQ ──────────────────────────────────────── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    const b = i.querySelector('.faq-q');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+/* ─── MODAL CONFIG ─────────────────────────────── */
+/*
+  Google Forms (datos a Google Sheets):
+  Rellena estos 5 IDs desde tu formulario pre-rellenado
+*/
+const GOOGLE_FORM_ID   = '1FAIpQLSf3ZdqO79oGaqsrgHiZsJEzhGHeMH-QcttTNnF8-r12fl-Vfw';
+const ENTRY_NOMBRE     = 'entry.786027318';
+const ENTRY_EMAIL      = 'entry.1530007615';
+const ENTRY_TELEFONO   = 'entry.435833435';
+const ENTRY_TICKET     = 'entry.852346362';
+
+const TICKETS = {
+  earlybird: {
+    label:   'Early Bird · 19€',
+    price:   '19€',
+    title:   'Reserva tu plaza — Early Bird',
+    revolut: 'https://checkout.revolut.com/pay/f82e81f5-2752-414b-a3a0-7fc1344651fa'
+  },
+  estandar: {
+    label:   'Estándar · 25€',
+    price:   '25€',
+    title:   'Reserva tu plaza — Estándar',
+    revolut: 'https://checkout.revolut.com/pay/f82e81f5-2752-414b-a3a0-7fc1344651fa'
+  },
+  premium: {
+    label:   'Premium · 35€',
+    price:   '35€',
+    title:   'Reserva tu plaza — Premium',
+    revolut: 'https://checkout.revolut.com/pay/f82e81f5-2752-414b-a3a0-7fc1344651fa'
+  }
+};
+
+let currentTicket = 'earlybird';
+
+function openModal(tipo) {
+  currentTicket = tipo;
+  const t = TICKETS[tipo];
+  document.getElementById('modal-badge').textContent         = t.label;
+  document.getElementById('modal-title').textContent         = t.title;
+  document.getElementById('modal-price-display').textContent = t.price;
+  document.getElementById('hidden-ticket').value             = t.label;
+
+  document.getElementById('modal-form').classList.remove('hide');
+  document.getElementById('modal-header').classList.remove('hide');
+  document.getElementById('modal-title').classList.remove('hide');
+  document.getElementById('modal-subtitle').classList.remove('hide');
+  document.getElementById('modal-success').classList.remove('show');
+  const btn = document.getElementById('modal-submit-btn');
+  btn.disabled = false;
+  btn.innerHTML = `
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" width="17" height="17">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+    Continuar al pago seguro
+  `;
+  clearErrors();
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('f-nombre').focus(), 120);
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modal')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ─── VALIDATION ───────────────────────────────── */
+function clearErrors() {
+  ['nombre','email','telefono'].forEach(field => {
+    document.getElementById('f-' + field).classList.remove('error');
+    document.getElementById('err-' + field).classList.remove('show');
+  });
+}
+function validateForm() {
+  let ok = true;
+  clearErrors();
+  const nombre   = document.getElementById('f-nombre').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const telefono = document.getElementById('f-telefono').value.trim();
+
+  if (nombre.length < 2) {
+    document.getElementById('f-nombre').classList.add('error');
+    document.getElementById('err-nombre').classList.add('show');
+    ok = false;
+  }
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) {
+    document.getElementById('f-email').classList.add('error');
+    document.getElementById('err-email').classList.add('show');
+    ok = false;
+  }
+  if (telefono.length < 6) {
+    document.getElementById('f-telefono').classList.add('error');
+    document.getElementById('err-telefono').classList.add('show');
+    ok = false;
+  }
+  return ok;
+}
+
+/* ─── SUBMIT ───────────────────────────────────── */
+function handleSubmit(e) {
+  e.preventDefault();
+  if (!validateForm()) return;
+
+  const btn = document.getElementById('modal-submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin .8s linear infinite">
+      <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+    </svg>
+    Guardando datos…
+  `;
+
+  const nombre   = document.getElementById('f-nombre').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const telefono = document.getElementById('f-telefono').value.trim();
+  const ticket   = TICKETS[currentTicket].label;
+  const revolut  = TICKETS[currentTicket].revolut;
+  const isPending = revolut.startsWith('PENDIENTE');
+
+  const formsConfigured = GOOGLE_FORM_ID && GOOGLE_FORM_ID !== 'YOUR_GOOGLE_FORM_ID';
+  if (formsConfigured) {
+    const params = new URLSearchParams({
+      [ENTRY_NOMBRE]:   nombre,
+      [ENTRY_EMAIL]:    email,
+      [ENTRY_TELEFONO]: telefono,
+      [ENTRY_TICKET]:   ticket,
+      'submit':         'Submit'
+    });
+    const submitUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse?${params.toString()}`;
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.name = 'hidden_iframe';
+    iframe.src = submitUrl;
+    document.body.appendChild(iframe);
+    setTimeout(() => document.body.removeChild(iframe), 5000);
+  }
+
+  document.getElementById('modal-form').classList.add('hide');
+  document.getElementById('modal-header').classList.add('hide');
+  document.getElementById('modal-title').classList.add('hide');
+  document.getElementById('modal-subtitle').classList.add('hide');
+  document.getElementById('modal-success').classList.add('show');
+
+  setTimeout(() => {
+    if (isPending) {
+      document.querySelector('.success-title').textContent = '¡Datos registrados!';
+      document.querySelector('.success-text').textContent  = 'Esta entrada estará disponible muy pronto. Te contactaremos por WhatsApp con el enlace de pago en cuanto esté activo.';
+    } else {
+      window.location.href = revolut;
+    }
+  }, 1400);
+}
+
+const style = document.createElement('style');
+style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+document.head.appendChild(style);
+</script>
 </body>
 </html>
