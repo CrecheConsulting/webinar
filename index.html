@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¿Quieres trabajar en un creche irlandés con las cosas claras? — SolveED × NBEduca</title>
+<title>¿Quieres trabajar en una creche irlandesa con las cosas claras? — SolveED × NBEduca</title>
 <meta name="description" content="Webinar en directo 29 abril · 90 minutos con Roberto (SolveED) y Nacho (NBEduca) sobre empleo, certificaciones y vida real en Irlanda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -407,12 +407,15 @@ img, svg { display: block; max-width: 100%; }
 .hero-h1 {
   font-family: 'Baloo 2', sans-serif;
   font-weight: 800;
-  font-size: clamp(42px, 6.4vw, 92px);
-  line-height: .96;
-  letter-spacing: -2px;
+  font-size: clamp(34px, 6.4vw, 92px);
+  line-height: 1;
+  letter-spacing: -1.5px;
   color: var(--ink);
-  max-width: 14ch;
+  max-width: 16ch;
   text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
 }
 .hero-h1 strong {
   color: var(--peach-deep);
@@ -1357,12 +1360,19 @@ img, svg { display: block; max-width: 100%; }
    ═══════════════════════════════════════════════════ */
 @media (max-width: 960px) {
   .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "center center"
+      "left   right";
+    gap: 36px 18px;
   }
-  .hero-side { flex-direction: row; justify-content: center; gap: 20px; }
-  .hero-portrait { max-width: 140px; }
-  .hero-portrait-initial { font-size: clamp(80px, 18vw, 110px); }
+  .hero-center { grid-area: center; }
+  .hero-side:first-child { grid-area: left; }
+  .hero-side:last-child { grid-area: right; }
+  .hero-h1 { max-width: none; letter-spacing: -1px; }
+  .hero-portrait { max-width: 200px; aspect-ratio: 4/5; }
+  .hero-portrait-initial { font-size: clamp(90px, 22vw, 130px); }
+  .hero-side { gap: 12px; }
 
   .proof-inner { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
   .proof-item:nth-child(2) { border-right: none; }
@@ -1386,9 +1396,19 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 640px) {
   .nav-links { display: none; }
   .nav-cta-desktop { display: none; }
-  .hero { padding: 110px 0 60px; }
-  .hero-side { flex-wrap: wrap; }
-  .hero-portrait { max-width: 120px; }
+  .hero { padding: 110px 0 56px; }
+  .hero-inner { gap: 28px 12px; }
+  .hero-h1 { font-size: clamp(30px, 8.5vw, 48px); letter-spacing: -.8px; }
+  .hero-sub { font-size: 15px; }
+  .hero-portrait { max-width: 100%; aspect-ratio: 4/5; border-radius: var(--r-md); }
+  .hero-portrait-initial { font-size: clamp(70px, 20vw, 100px); }
+  .hero-portrait-badge { bottom: 8px; left: 8px; right: 8px; padding: 7px 9px; }
+  .hp-name { font-size: 13px; }
+  .hp-role { font-size: 10px; }
+  .hero-side-caption { font-size: 11px; padding: 5px 10px; }
+  .live-chip { font-size: 12px; padding: 6px 12px; }
+  .btn-mega { padding: 18px 30px; font-size: 16px; letter-spacing: .5px; }
+  .hero-cta-note { font-size: 12px; text-align: center; padding: 0 12px; }
   .agenda-timeline::before { left: 72px; }
   .agenda-row { grid-template-columns: 60px 24px 1fr; gap: 12px; }
   .agenda-time { font-size: 14px; }
@@ -1474,17 +1494,17 @@ img, svg { display: block; max-width: 100%; }
         </div>
 
         <h1 class="hero-h1">
-          ¿Quieres trabajar en un <strong>creche irlandés</strong> con las cosas claras?
+          ¿Quieres trabajar en una <strong>creche irlandesa</strong> con las cosas claras?
         </h1>
 
         <p class="hero-sub">
-          Aprende del equipo que ha acompañado a <strong>500+ educadoras</strong> españolas a dar el salto a Irlanda — empleo, certificaciones y vida real en 90 minutos.
+          Aprende del equipo que ha acompañado a <strong>500+ educadores/as</strong> a dar el salto a Irlanda — empleo, certificaciones y vida real en 90 minutos.
         </p>
 
         <div class="hero-cta-wrap">
           <div class="hero-cta-row">
             <button onclick="openModal('earlybird')" class="btn btn-mega">
-              Sí, quiero estar preparada
+              Sí, quiero estar preparado/a
               <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.8">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -1532,7 +1552,7 @@ img, svg { display: block; max-width: 100%; }
         </div>
         <div>
           <div class="proof-number">500+</div>
-          <div class="proof-label">Educadoras en<br>comunidad</div>
+          <div class="proof-label">Educadores/as<br>en comunidad</div>
         </div>
       </div>
 
@@ -1598,7 +1618,7 @@ img, svg { display: block; max-width: 100%; }
       <div class="pain-card">
         <div class="pain-quote">“</div>
         <div class="pain-text">No sé cómo es trabajar allí de verdad.</div>
-        <div class="pain-sub">Los anuncios pintan bien pero nadie te cuenta el día a día, los sueldos reales ni qué buscan los creches en una educadora española.</div>
+        <div class="pain-sub">Los anuncios pintan bien pero nadie te cuenta el día a día, los sueldos reales ni qué buscan las creches en un educador/a español/a.</div>
       </div>
       <div class="pain-card">
         <div class="pain-quote">“</div>
@@ -1642,7 +1662,7 @@ img, svg { display: block; max-width: 100%; }
         <div class="offer-block-num">01</div>
         <div class="offer-block-eyebrow">Bloque 1 · Nacho — NBEduca</div>
         <h3 class="offer-block-title">Empleo real en Irlanda</h3>
-        <p class="offer-block-lead">Cómo funciona el mercado laboral en los creches irlandeses, qué buscan los empleadores y cómo organizar la llegada sin sustos.</p>
+        <p class="offer-block-lead">Cómo funciona el mercado laboral en las creches irlandesas, qué buscan los empleadores y cómo organizar la llegada sin sustos.</p>
         <ul class="offer-checklist">
           <li>Cómo está el mercado y qué perfil se llevan los mejores puestos</li>
           <li>Visado, PPS, contrato y marco legal en cristalino</li>
@@ -1701,16 +1721,16 @@ img, svg { display: block; max-width: 100%; }
           </div>
         </div>
         <p class="sc-bio">
-          Ha sido manager en creches irlandeses y ha formado a cientos de educadoras desde el día a día real. Conoce el sistema por dentro: sabe qué certificaciones pesan de verdad en una entrevista y cuáles son puro papel.
+          Ha sido manager en creches irlandesas y ha formado a cientos de educadores/as desde el día a día real. Conoce el sistema por dentro: sabe qué certificaciones pesan de verdad en una entrevista y cuáles son puro papel.
         </p>
         <div class="sc-stats">
           <div class="sc-stat">
             <div class="sc-stat-num peach-num">200+</div>
-            <div class="sc-stat-label">Educadoras formadas desde su experiencia como mánager</div>
+            <div class="sc-stat-label">Educadores/as formados/as desde su experiencia como mánager</div>
           </div>
           <div class="sc-stat">
             <div class="sc-stat-num peach-num">5 años</div>
-            <div class="sc-stat-label">Experiencia directa en creches en Irlanda</div>
+            <div class="sc-stat-label">Experiencia directa en creches irlandesas</div>
           </div>
         </div>
       </div>
@@ -1726,7 +1746,7 @@ img, svg { display: block; max-width: 100%; }
           </div>
         </div>
         <p class="sc-bio">
-          Especialista en recolocación del sector educativo España→Irlanda. Ha acompañado personalmente el salto de 200+ profesionales — desde el primer email al empleador hasta el primer día en el creche.
+          Especialista en recolocación del sector educativo España→Irlanda. Ha acompañado personalmente el salto de 200+ profesionales — desde el primer email al empleador hasta el primer día en la creche.
         </p>
         <div class="sc-stats">
           <div class="sc-stat">
@@ -1735,7 +1755,7 @@ img, svg { display: block; max-width: 100%; }
           </div>
           <div class="sc-stat">
             <div class="sc-stat-num sky-num">+50</div>
-            <div class="sc-stat-label">Creches irlandeses en la red de NBEduca</div>
+            <div class="sc-stat-label">Creches irlandesas en la red de NBEduca</div>
           </div>
         </div>
       </div>
@@ -1880,7 +1900,7 @@ img, svg { display: block; max-width: 100%; }
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
             <polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5 12 2"/>
           </svg>
-          La que eligen la mayoría
+          La que elige la mayoría
         </div>
       </div>
 
@@ -2031,7 +2051,7 @@ img, svg { display: block; max-width: 100%; }
         29 de abril · 19:00h · Quedan pocas plazas
       </div>
       <h2 class="mega-cta-title">
-        Quien llega <span>preparada</span>,<br>
+        Quien llega <span>preparado/a</span>,<br>
         <span>llega con ventaja</span>.
       </h2>
       <p class="mega-cta-sub">
